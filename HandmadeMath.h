@@ -174,18 +174,18 @@ extern "C"
 # define HANDMADE_MATH_USE_RADIANS
 #endif
     
-#define PI 3.14159265358979323846
-#define PI32 3.14159265359f
-#define DEG180 180.0
-#define DEG18032 180.0f
-#define TURNHALF 0.5
-#define TURNHALF32 0.5f
-#define RadToDeg ((float)(DEG180/PI))
-#define RadToTurn ((float)(TURNHALF/PI))
-#define DegToRad ((float)(PI/DEG180))
-#define DegToTurn ((float)(TURNHALF/DEG180))
-#define TurnToRad ((float)(PI/TURNHALF))
-#define TurnToDeg ((float)(DEG180/TURNHALF))
+#define KPi 3.14159265358979323846
+#define KPi32 3.14159265359f
+#define KDeg180 180.0
+#define KDeg18032 180.0f
+#define KTurnHalf 0.5
+#define KTurnHalf32 0.5f
+#define RadToDeg ((float)(KDeg180/KPi))
+#define RadToTurn ((float)(KTurnHalf/KPi))
+#define DegToRad ((float)(KPi/KDeg180))
+#define DegToTurn ((float)(KTurnHalf/KDeg180))
+#define TurnToRad ((float)(KPi/KTurnHalf))
+#define TurnToDeg ((float)(KDeg180/KTurnHalf))
 
 #if defined(HANDMADE_MATH_USE_RADIANS)
 # define AngleRad(a) (a)
