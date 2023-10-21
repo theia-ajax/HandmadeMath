@@ -2,7 +2,7 @@
 
 TEST(Transformations, Translate)
 {
-    Mat4 translate = Translate(V3(1.0f, -3.0f, 6.0f));
+    Mat4 translate = TranslateV3(V3(1.0f, -3.0f, 6.0f));
 
     Vec3 original = V3(1.0f, 2.0f, 3.0f);
     Vec4 translated = MulM4V4(translate, V4V(original, 1));
@@ -48,7 +48,7 @@ TEST(Transformations, Rotate)
 
 TEST(Transformations, Scale)
 {
-    Mat4 scale = Scale(V3(2.0f, -3.0f, 0.5f));
+    Mat4 scale = ScaleV3(V3(2.0f, -3.0f, 0.5f));
 
     Vec3 original = V3(1.0f, 2.0f, 3.0f);
     Vec4 scaled = MulM4V4(scale, V4V(original, 1));

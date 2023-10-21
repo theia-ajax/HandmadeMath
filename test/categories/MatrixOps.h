@@ -340,8 +340,8 @@ TEST(InvMatrix, InvRotate)
 
 TEST(InvMatrix, InvScale)
 {
-    Vec3 ScaleV  = {1.0f, -1.0f, 0.5f};
-    Mat4 Matrix = Scale(ScaleV);
+    Vec3 Scale  = {1.0f, -1.0f, 0.5f};
+    Mat4 Matrix = ScaleV3(Scale);
     Mat4 Expect = M4D(1.0f);
     Mat4 Inverse = InvScale(Matrix);
     Mat4 Result = MulM4(Matrix, Inverse);
@@ -351,7 +351,7 @@ TEST(InvMatrix, InvScale)
 TEST(InvMatrix, InvTranslate)
 {
     Vec3 Move  = {1.0f, -1.0f, 0.5f};
-    Mat4 Matrix = Translate(Move);
+    Mat4 Matrix = TranslateV3(Move);
     Mat4 Expect = M4D(1.0f);
     Mat4 Inverse = InvTranslate(Matrix);
     Mat4 Result = MulM4(Matrix, Inverse);

@@ -7,12 +7,11 @@
     - Remove HMM_ prefix, adjust some variable names accordingly
     - Parameters reordered for Clamp from min, value, max to value, min, max
     - Parameters reordered for Lerp from a, t, b to a, b, t
-    - Extend clamp to V2,V3,V4 as component-wise clamp
+    - Extend clamp to ClampV2/3/4 as component-wise clamp
     - Constants from ALLCAPS style to KPascalCase style
     - Updated all tests to work with changes
-
-  Future Edits:
-    - Prepend matrix constructors with M
+    - Scale -> ScaleV3
+    - Translate -> TranslateV3
 
   This is a single header file with a bunch of useful types and functions for
   games and graphics. Consider it a lightweight alternative to GLM that works
@@ -1935,10 +1934,10 @@ static inline Mat4 InvPerspective_LH(Mat4 PerspectiveMatrix)
     return Result;
 }
 
-COVERAGE(Translate, 1)
-static inline Mat4 Translate(Vec3 Translation)
+COVERAGE(TranslateV3, 1)
+static inline Mat4 TranslateV3(Vec3 Translation)
 {
-    ASSERT_COVERED(Translate);
+    ASSERT_COVERED(TranslateV3);
 
     Mat4 Result = M4D(1.0f);
     Result.Elements[3][0] = Translation.X;
@@ -2004,10 +2003,10 @@ static inline Mat4 InvRotate(Mat4 RotationMatrix)
     return TransposeM4(RotationMatrix);
 }
 
-COVERAGE(Scale, 1)
-static inline Mat4 Scale(Vec3 Scale)
+COVERAGE(ScaleV3, 1)
+static inline Mat4 ScaleV3(Vec3 Scale)
 {
-    ASSERT_COVERED(Scale);
+    ASSERT_COVERED(ScaleV3);
 
     Mat4 Result = M4D(1.0f);
     Result.Elements[0][0] = Scale.X;
@@ -2384,10 +2383,10 @@ static inline Quat SLerp(Quat Left, Quat Right, FLOAT Time)
     return Result;
 }
 
-COVERAGE(QToM4, 1)
-static inline Mat4 QToM4(Quat Left)
+COVERAGE(M4FromQ, 1)
+static inline Mat4 M4FromQ(Quat Left)
 {
-    ASSERT_COVERED(QToM4);
+    ASSERT_COVERED(M4FromQ);
 
     Mat4 Result;
 

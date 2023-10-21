@@ -112,7 +112,7 @@ TEST(QuaternionOps, QuatToMat4)
 
     Quat rot = Q(0.707107f, 0.0f, 0.0f, 0.707107f);
 
-    Mat4 result = QToM4(rot);
+    Mat4 result = M4FromQ(rot);
 
     EXPECT_NEAR(result.Elements[0][0], 1.0f, abs_error);
     EXPECT_NEAR(result.Elements[0][1], 0.0f, abs_error);
