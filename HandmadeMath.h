@@ -7,10 +7,12 @@
     - Remove HMM_ prefix, adjust some variable names accordingly
     - Parameters reordered for Clamp from min, value, max to value, min, max
     - Parameters reordered for Lerp from a, t, b to a, b, t
-    - Only uses turns
     - Extend clamp to V2,V3,V4 as component-wise clamp
     - Constants from ALLCAPS style to KPascalCase style
     - Updated all tests to work with changes
+
+  Future Edits:
+    - Prepend matrix constructors with M
 
   This is a single header file with a bunch of useful types and functions for
   games and graphics. Consider it a lightweight alternative to GLM that works
@@ -103,8 +105,6 @@
    Insofaras (@insofaras)
    Daniel Gibson (@DanielGibson)
 */
-
-#define HANDMADE_MATH_USE_TURNS
 
 #ifndef HANDMADE_MATH_H
 #define HANDMADE_MATH_H
@@ -1097,7 +1097,7 @@ static inline Vec2 ClampV2(Vec2 Value, Vec2 Min, Vec2 Max)
 COVERAGE(ClampV3, 1)
 static inline Vec3 ClampV3(Vec3 Value, Vec3 Min, Vec3 Max)
 {
-    ASSERT_COVERED(ClampV2);
+    ASSERT_COVERED(ClampV3);
     return V3(Clamp(Value.X, Min.X, Max.X), Clamp(Value.Y, Min.Y, Max.Y), Clamp(Value.Z, Min.Z, Max.Z));
 }
 

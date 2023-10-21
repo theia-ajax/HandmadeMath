@@ -40,14 +40,14 @@ TEST(ScalarMath, RSquareRootF)
 
 TEST(ScalarMath, Lerp)
 {
-    EXPECT_FLOAT_EQ(Lerp(-2.0f, 0.0f, 2.0f), -2.0f);
-    EXPECT_FLOAT_EQ(Lerp(-2.0f, 0.5f, 2.0f), 0.0f);
-    EXPECT_FLOAT_EQ(Lerp(-2.0f, 1.0f, 2.0f), 2.0f);
+    EXPECT_FLOAT_EQ(Lerp(-2.0f, 2.0f, 0.0f), -2.0f);
+    EXPECT_FLOAT_EQ(Lerp(-2.0f, 2.0f, 0.5f), 0.0f);
+    EXPECT_FLOAT_EQ(Lerp(-2.0f, 2.0f, 1.0f), 2.0f);
 }
 
 TEST(ScalarMath, Clamp)
 {
-    EXPECT_FLOAT_EQ(Clamp(-2.0f, 0.0f, 2.0f), 0.0f);
-    EXPECT_FLOAT_EQ(Clamp(-2.0f, -3.0f, 2.0f), -2.0f);
-    EXPECT_FLOAT_EQ(Clamp(-2.0f, 3.0f, 2.0f), 2.0f);
+    EXPECT_FLOAT_EQ(Clamp(0.0f, -2.0f, 2.0f), 0.0f);
+    EXPECT_FLOAT_EQ(Clamp(-3.0f, -2.0f, 2.0f), -2.0f);
+    EXPECT_FLOAT_EQ(Clamp(3.0f, -2.0f, 2.0f), 2.0f);
 }

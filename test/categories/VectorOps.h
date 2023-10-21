@@ -242,6 +242,129 @@ TEST(VectorOps, LerpV4)
 #endif
 }
 
+TEST(VectorOps, ClampV2)
+{
+    Vec2 v1 = V2(-1.0f, -1.25f);
+    Vec2 v2 = V2(1.0f, 1.25f);
+
+    {
+        Vec2 result1 = ClampV2(V2(-2.0f, -2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result1.X, v1.X);
+        EXPECT_FLOAT_EQ(result1.Y, v1.Y);
+
+        Vec2 result2 = ClampV2(V2(2.0f, 2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result2.X, v2.X);
+        EXPECT_FLOAT_EQ(result2.Y, v2.Y);
+
+        Vec2 result3 = ClampV2(V2(0.0f, 0.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result3.X, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Y, 0.0f);
+    }
+#ifdef __cplusplus
+    {
+        Vec2 result1 = Clamp(V2(-2.0f, -2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result1.X, v1.X);
+        EXPECT_FLOAT_EQ(result1.Y, v1.Y);
+
+        Vec2 result2 = Clamp(V2(2.0f, 2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result2.X, v2.X);
+        EXPECT_FLOAT_EQ(result2.Y, v2.Y);
+
+        Vec2 result3 = Clamp(V2(0.0f, 0.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result3.X, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Y, 0.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, ClampV3)
+{
+    Vec3 v1 = V3(-1.0f, -1.25f, -1.5f);
+    Vec3 v2 = V3(1.0f, 1.25f, 1.5f);
+
+    {
+        Vec3 result1 = ClampV3(V3(-2.0f, -2.0f, -2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result1.X, v1.X);
+        EXPECT_FLOAT_EQ(result1.Y, v1.Y);
+        EXPECT_FLOAT_EQ(result1.Z, v1.Z);
+
+        Vec3 result2 = ClampV3(V3(2.0f, 2.0f, 2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result2.X, v2.X);
+        EXPECT_FLOAT_EQ(result2.Y, v2.Y);
+        EXPECT_FLOAT_EQ(result2.Z, v2.Z);
+
+        Vec3 result3 = ClampV3(V3(0.0f, 0.0f, 0.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result3.X, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Y, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Z, 0.0f);
+    }
+#ifdef __cplusplus
+    {
+        Vec3 result1 = Clamp(V3(-2.0f, -2.0f, -2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result1.X, v1.X);
+        EXPECT_FLOAT_EQ(result1.Y, v1.Y);
+        EXPECT_FLOAT_EQ(result1.Z, v1.Z);
+
+        Vec3 result2 = Clamp(V3(2.0f, 2.0f, 2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result2.X, v2.X);
+        EXPECT_FLOAT_EQ(result2.Y, v2.Y);
+        EXPECT_FLOAT_EQ(result2.Z, v2.Z);
+
+        Vec3 result3 = Clamp(V3(0.0f, 0.0f, 0.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result3.X, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Y, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Z, 0.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, ClampV4)
+{
+    Vec4 v1 = V4(-1.0f, -1.25f, -1.5f, -1.75f);
+    Vec4 v2 = V4(1.0f, 1.25f, 1.5f, 1.75f);
+
+    {
+        Vec4 result1 = ClampV4(V4(-2.0f, -2.0f, -2.0f, -2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result1.X, v1.X);
+        EXPECT_FLOAT_EQ(result1.Y, v1.Y);
+        EXPECT_FLOAT_EQ(result1.Z, v1.Z);
+        EXPECT_FLOAT_EQ(result1.W, v1.W);
+
+        Vec4 result2 = ClampV4(V4(2.0f, 2.0f, 2.0f, 2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result2.X, v2.X);
+        EXPECT_FLOAT_EQ(result2.Y, v2.Y);
+        EXPECT_FLOAT_EQ(result2.Z, v2.Z);
+        EXPECT_FLOAT_EQ(result2.W, v2.W);
+
+        Vec4 result3 = ClampV4(V4(0.0f, 0.0f, 0.0f, 0.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result3.X, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Y, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Z, 0.0f);
+        EXPECT_FLOAT_EQ(result3.W, 0.0f);
+    }
+#ifdef __cplusplus
+    {
+        Vec4 result1 = Clamp(V4(-2.0f, -2.0f, -2.0f, -2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result1.X, v1.X);
+        EXPECT_FLOAT_EQ(result1.Y, v1.Y);
+        EXPECT_FLOAT_EQ(result1.Z, v1.Z);
+        EXPECT_FLOAT_EQ(result1.W, v1.W);
+
+        Vec4 result2 = Clamp(V4(2.0f, 2.0f, 2.0f, 2.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result2.X, v2.X);
+        EXPECT_FLOAT_EQ(result2.Y, v2.Y);
+        EXPECT_FLOAT_EQ(result2.Z, v2.Z);
+        EXPECT_FLOAT_EQ(result2.W, v2.W);
+
+        Vec4 result3 = Clamp(V4(0.0f, 0.0f, 0.0f, 0.0f), v1, v2);
+        EXPECT_FLOAT_EQ(result3.X, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Y, 0.0f);
+        EXPECT_FLOAT_EQ(result3.Z, 0.0f);
+        EXPECT_FLOAT_EQ(result3.W, 0.0f);
+    }
+#endif
+}
+
 /*
  * MatrixOps tests
  */
