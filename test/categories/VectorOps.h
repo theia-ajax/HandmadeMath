@@ -179,6 +179,186 @@ TEST(VectorOps, DotVec4)
 #endif
 }
 
+TEST(VectorOps, MinV2)
+{
+    Vec2 v1 = V2(1.0f, 0.0f);
+    Vec2 v2 = V2(0.0f, 1.0f);
+    Vec2 m = MinV2(v1, v2);
+    EXPECT_FLOAT_EQ(m.X, 0.0f);
+    EXPECT_FLOAT_EQ(m.Y, 0.0f);
+#ifdef __cplusplus
+    {
+        Vec2 m = Min(v1, v2);
+        EXPECT_FLOAT_EQ(m.X, 0.0f);
+        EXPECT_FLOAT_EQ(m.Y, 0.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, MinV3)
+{
+    Vec3 v1 = V3(1.0f, 0.0f, 1.0f);
+    Vec3 v2 = V3(0.0f, 1.0f, 0.0f);
+    Vec3 m = MinV3(v1, v2);
+    EXPECT_FLOAT_EQ(m.X, 0.0f);
+    EXPECT_FLOAT_EQ(m.Y, 0.0f);
+    EXPECT_FLOAT_EQ(m.Z, 0.0f);
+#ifdef __cplusplus
+    {
+        Vec3 m = Min(v1, v2);
+        EXPECT_FLOAT_EQ(m.X, 0.0f);
+        EXPECT_FLOAT_EQ(m.Y, 0.0f);
+        EXPECT_FLOAT_EQ(m.Z, 0.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, MinV4)
+{
+    Vec4 v1 = V4(1.0f, 0.0f, 1.0f, 0.0f);
+    Vec4 v2 = V4(0.0f, 1.0f, 0.0f, 1.0f);
+    Vec4 m = MinV4(v1, v2);
+    EXPECT_FLOAT_EQ(m.X, 0.0f);
+    EXPECT_FLOAT_EQ(m.Y, 0.0f);
+    EXPECT_FLOAT_EQ(m.Z, 0.0f);
+    EXPECT_FLOAT_EQ(m.W, 0.0f);
+#ifdef __cplusplus
+    {
+        Vec4 m = Min(v1, v2);
+        EXPECT_FLOAT_EQ(m.X, 0.0f);
+        EXPECT_FLOAT_EQ(m.Y, 0.0f);
+        EXPECT_FLOAT_EQ(m.Z, 0.0f);
+        EXPECT_FLOAT_EQ(m.W, 0.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, MaxV2)
+{
+    Vec2 v1 = V2(1.0f, 0.0f);
+    Vec2 v2 = V2(0.0f, 1.0f);
+    Vec2 m = MaxV2(v1, v2);
+    EXPECT_FLOAT_EQ(m.X, 1.0f);
+    EXPECT_FLOAT_EQ(m.Y, 1.0f);
+#ifdef __cplusplus
+    {
+        Vec2 m = Max(v1, v2);
+        EXPECT_FLOAT_EQ(m.X, 1.0f);
+        EXPECT_FLOAT_EQ(m.Y, 1.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, MaxV3)
+{
+    Vec3 v1 = V3(1.0f, 0.0f, 1.0f);
+    Vec3 v2 = V3(0.0f, 1.0f, 0.0f);
+    Vec3 m = MaxV3(v1, v2);
+    EXPECT_FLOAT_EQ(m.X, 1.0f);
+    EXPECT_FLOAT_EQ(m.Y, 1.0f);
+    EXPECT_FLOAT_EQ(m.Z, 1.0f);
+#ifdef __cplusplus
+    {
+        Vec3 m = Max(v1, v2);
+        EXPECT_FLOAT_EQ(m.X, 1.0f);
+        EXPECT_FLOAT_EQ(m.Y, 1.0f);
+        EXPECT_FLOAT_EQ(m.Z, 1.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, MaxV4)
+{
+    Vec4 v1 = V4(1.0f, 0.0f, 1.0f, 0.0f);
+    Vec4 v2 = V4(0.0f, 1.0f, 0.0f, 1.0f);
+    Vec4 m = MaxV4(v1, v2);
+    EXPECT_FLOAT_EQ(m.X, 1.0f);
+    EXPECT_FLOAT_EQ(m.Y, 1.0f);
+    EXPECT_FLOAT_EQ(m.Z, 1.0f);
+    EXPECT_FLOAT_EQ(m.W, 1.0f);
+#ifdef __cplusplus
+    {
+        Vec4 m = Max(v1, v2);
+        EXPECT_FLOAT_EQ(m.X, 1.0f);
+        EXPECT_FLOAT_EQ(m.Y, 1.0f);
+        EXPECT_FLOAT_EQ(m.Z, 1.0f);
+        EXPECT_FLOAT_EQ(m.W, 1.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, AbsV2)
+{
+    Vec2 v1 = AbsV2(V2(1.0f, 2.0f));
+    Vec2 v2 = AbsV2(V2(-1.0f, -2.0f));
+    EXPECT_FLOAT_EQ(v1.X, 1.0f);
+    EXPECT_FLOAT_EQ(v1.Y, 2.0f);
+    EXPECT_FLOAT_EQ(v2.X, 1.0f);
+    EXPECT_FLOAT_EQ(v2.Y, 2.0f);
+#ifdef __cplusplus
+    {
+        Vec2 v1 = Abs(V2(1.0f, 2.0f));
+        Vec2 v2 = Abs(V2(-1.0f, -2.0f));
+        EXPECT_FLOAT_EQ(v1.X, 1.0f);
+        EXPECT_FLOAT_EQ(v1.Y, 2.0f);
+        EXPECT_FLOAT_EQ(v2.X, 1.0f);
+        EXPECT_FLOAT_EQ(v2.Y, 2.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, AbsV3)
+{
+    Vec3 v1 = AbsV3(V3(1.0f, 2.0f, 3.0f));
+    Vec3 v2 = AbsV3(V3(-1.0f, -2.0f, -3.0f));
+    EXPECT_FLOAT_EQ(v1.X, 1.0f);
+    EXPECT_FLOAT_EQ(v1.Y, 2.0f);
+    EXPECT_FLOAT_EQ(v1.Z, 3.0f);
+    EXPECT_FLOAT_EQ(v2.X, 1.0f);
+    EXPECT_FLOAT_EQ(v2.Y, 2.0f);
+    EXPECT_FLOAT_EQ(v2.Z, 3.0f);
+#ifdef __cplusplus
+    {
+        Vec3 v1 = Abs(V3(1.0f, 2.0f, 3.0f));
+        Vec3 v2 = Abs(V3(-1.0f, -2.0f, -3.0f));
+        EXPECT_FLOAT_EQ(v1.X, 1.0f);
+        EXPECT_FLOAT_EQ(v1.Y, 2.0f);
+        EXPECT_FLOAT_EQ(v1.Z, 3.0f);
+        EXPECT_FLOAT_EQ(v2.X, 1.0f);
+        EXPECT_FLOAT_EQ(v2.Y, 2.0f);
+        EXPECT_FLOAT_EQ(v2.Z, 3.0f);
+    }
+#endif
+}
+
+TEST(VectorOps, AbsV4)
+{
+    Vec4 v1 = AbsV4(V4(1.0f, 2.0f, 3.0f, 4.0f));
+    Vec4 v2 = AbsV4(V4(-1.0f, -2.0f, -3.0f, -4.0f));
+    EXPECT_FLOAT_EQ(v1.X, 1.0f);
+    EXPECT_FLOAT_EQ(v1.Y, 2.0f);
+    EXPECT_FLOAT_EQ(v1.Z, 3.0f);
+    EXPECT_FLOAT_EQ(v1.W, 4.0f);
+    EXPECT_FLOAT_EQ(v2.X, 1.0f);
+    EXPECT_FLOAT_EQ(v2.Y, 2.0f);
+    EXPECT_FLOAT_EQ(v2.Z, 3.0f);
+    EXPECT_FLOAT_EQ(v2.W, 4.0f);
+#ifdef __cplusplus
+    {
+        Vec4 v1 = Abs(V4(1.0f, 2.0f, 3.0f, 4.0f));
+        Vec4 v2 = Abs(V4(-1.0f, -2.0f, -3.0f, -4.0f));
+        EXPECT_FLOAT_EQ(v1.X, 1.0f);
+        EXPECT_FLOAT_EQ(v1.Y, 2.0f);
+        EXPECT_FLOAT_EQ(v1.Z, 3.0f);
+        EXPECT_FLOAT_EQ(v1.W, 4.0f);
+        EXPECT_FLOAT_EQ(v2.X, 1.0f);
+        EXPECT_FLOAT_EQ(v2.Y, 2.0f);
+        EXPECT_FLOAT_EQ(v2.Z, 3.0f);
+        EXPECT_FLOAT_EQ(v2.W, 4.0f);
+    }
+#endif
+}
+
 TEST(VectorOps, LerpV2)
 {
     Vec2 v1 = V2(1.0f, 0.0f);

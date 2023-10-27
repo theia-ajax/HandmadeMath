@@ -12,6 +12,7 @@
     - Updated all tests to work with changes
     - Scale -> ScaleV3
     - Translate -> TranslateV3
+    - Added Abs/Min/Max Scalar and Vectors ops, keeping old preprocessors ones
 
   This is a single header file with a bunch of useful types and functions for
   games and graphics. Consider it a lightweight alternative to GLM that works
@@ -231,6 +232,8 @@ extern "C"
 # endif
 #endif
 
+// MIN, MAX, ABS have function equivalents to match V2/3/4 versions
+// Keeping the defines around for use on integer types
 #define MIN(a, b) ((a) > (b) ? (b) : (a))
 #define MAX(a, b) ((a) < (b) ? (b) : (a))
 #define ABS(a) ((a) > 0 ? (a) : -(a))
@@ -557,6 +560,27 @@ static inline FLOAT InvSqrtF(FLOAT Float)
  * Utility functions
  */
 
+COVERAGE(Min, 1)
+static inline FLOAT Min(FLOAT A, FLOAT B)
+{
+    ASSERT_COVERED(Min);
+    return (A < B) ? A : B;
+}
+
+COVERAGE(Max, 1)
+static inline FLOAT Max(FLOAT A, FLOAT B)
+{
+    ASSERT_COVERED(Max);
+    return (A < B) ? B : A;
+}
+
+COVERAGE(Abs, 1)
+static inline FLOAT Abs(FLOAT A)
+{
+    ASSERT_COVERED(Abs);
+    return (A >= 0) ? A : -A;
+}
+
 COVERAGE(Lerp, 1)
 static inline FLOAT Lerp(FLOAT A, FLOAT B, FLOAT Time)
 {
@@ -565,25 +589,11 @@ static inline FLOAT Lerp(FLOAT A, FLOAT B, FLOAT Time)
 }
 
 COVERAGE(Clamp, 1)
-static inline FLOAT Clamp(FLOAT Value, FLOAT Min, FLOAT Max)
+static inline FLOAT Clamp(FLOAT Value, FLOAT MinValue, FLOAT MaxValue)
 {
     ASSERT_COVERED(Clamp);
-
-    FLOAT Result = Value;
-
-    if (Result < Min)
-    {
-        Result = Min;
-    }
-
-    if (Result > Max)
-    {
-        Result = Max;
-    }
-
-    return Result;
+    return (Value < MinValue) ? MinValue : ((Value > MaxValue) ? MaxValue : Value);
 }
-
 
 /*
  * Vector initialization
@@ -1065,6 +1075,69 @@ static inline Vec4 NormV4(Vec4 A)
  * Utility vector functions
  */
 
+COVERAGE(MinV2, 1)
+static inline Vec2 MinV2(Vec2 A, Vec2 B)
+{
+    ASSERT_COVERED(MinV2);
+    return V2(Min(A.X, B.X), Min(A.Y, B.Y));
+}
+
+COVERAGE(MinV3, 1)
+static inline Vec3 MinV3(Vec3 A, Vec3 B)
+{
+    ASSERT_COVERED(MinV3);
+    return V3(Min(A.X, B.X), Min(A.Y, B.Y), Min(A.Z, B.Z));
+}
+
+COVERAGE(MinV4, 1)
+static inline Vec4 MinV4(Vec4 A, Vec4 B)
+{
+    ASSERT_COVERED(MinV4);
+    return V4(Min(A.X, B.X), Min(A.Y, B.Y), Min(A.Z, B.Z), Min(A.W, B.W));
+}
+
+COVERAGE(MaxV2, 1)
+static inline Vec2 MaxV2(Vec2 A, Vec2 B)
+{
+    ASSERT_COVERED(MaxV2);
+    return V2(Max(A.X, B.X), Max(A.Y, B.Y));
+}
+
+COVERAGE(MaxV3, 1)
+static inline Vec3 MaxV3(Vec3 A, Vec3 B)
+{
+    ASSERT_COVERED(MaxV3);
+    return V3(Max(A.X, B.X), Max(A.Y, B.Y), Max(A.Z, B.Z));
+}
+
+COVERAGE(MaxV4, 1)
+static inline Vec4 MaxV4(Vec4 A, Vec4 B)
+{
+    ASSERT_COVERED(MaxV4);
+    return V4(Max(A.X, B.X), Max(A.Y, B.Y), Max(A.Z, B.Z), Max(A.W, B.W));
+}
+
+COVERAGE(AbsV2, 1)
+static inline Vec2 AbsV2(Vec2 V)
+{
+    ASSERT_COVERED(AbsV2);
+    return V2(Abs(V.X), Abs(V.Y));
+}
+
+COVERAGE(AbsV3, 1)
+static inline Vec3 AbsV3(Vec3 V)
+{
+    ASSERT_COVERED(AbsV3);
+    return V3(Abs(V.X), Abs(V.Y), Abs(V.Z));
+}
+
+COVERAGE(AbsV4, 1)
+static inline Vec4 AbsV4(Vec4 V)
+{
+    ASSERT_COVERED(AbsV4);
+    return V4(Abs(V.X), Abs(V.Y), Abs(V.Z), Abs(V.W));
+}
+
 COVERAGE(LerpV2, 1)
 static inline Vec2 LerpV2(Vec2 A, Vec2 B, FLOAT Time)
 {
@@ -1087,28 +1160,28 @@ static inline Vec4 LerpV4(Vec4 A, Vec4 B, FLOAT Time)
 }
 
 COVERAGE(ClampV2, 1)
-static inline Vec2 ClampV2(Vec2 Value, Vec2 Min, Vec2 Max)
+static inline Vec2 ClampV2(Vec2 Value, Vec2 MinValue, Vec2 MaxValue)
 {
     ASSERT_COVERED(ClampV2);
-    return V2(Clamp(Value.X, Min.X, Max.X), Clamp(Value.Y, Min.Y, Max.Y));
+    return V2(Clamp(Value.X, MinValue.X, MaxValue.X), Clamp(Value.Y, MinValue.Y, MaxValue.Y));
 }
 
 COVERAGE(ClampV3, 1)
-static inline Vec3 ClampV3(Vec3 Value, Vec3 Min, Vec3 Max)
+static inline Vec3 ClampV3(Vec3 Value, Vec3 MinValue, Vec3 MaxValue)
 {
     ASSERT_COVERED(ClampV3);
-    return V3(Clamp(Value.X, Min.X, Max.X), Clamp(Value.Y, Min.Y, Max.Y), Clamp(Value.Z, Min.Z, Max.Z));
+    return V3(Clamp(Value.X, MinValue.X, MaxValue.X), Clamp(Value.Y, MinValue.Y, MaxValue.Y), Clamp(Value.Z, MinValue.Z, MaxValue.Z));
 }
 
 COVERAGE(ClampV4, 1)
-static inline Vec4 ClampV4(Vec4 Value, Vec4 Min, Vec4 Max)
+static inline Vec4 ClampV4(Vec4 Value, Vec4 MinValue, Vec4 MaxValue)
 {
     ASSERT_COVERED(ClampV4);
     return V4(
-        Clamp(Value.X, Min.X, Max.X),
-        Clamp(Value.Y, Min.Y, Max.Y),
-        Clamp(Value.Z, Min.Z, Max.Z),
-        Clamp(Value.W, Min.W, Max.W));
+        Clamp(Value.X, MinValue.X, MaxValue.X),
+        Clamp(Value.Y, MinValue.Y, MaxValue.Y),
+        Clamp(Value.Z, MinValue.Z, MaxValue.Z),
+        Clamp(Value.W, MinValue.W, MaxValue.W));
 }
 
 /*
@@ -2679,7 +2752,70 @@ static inline FLOAT Dot(Vec4 Left, Vec4 VecTwo)
     ASSERT_COVERED(DotV4CPP);
     return DotV4(Left, VecTwo);
 }
+
+COVERAGE(MinV2CPP, 1)
+static inline Vec2 Min(Vec2 A, Vec2 B)
+{
+    ASSERT_COVERED(MinV2CPP);
+    return MinV2(A, B);
+}
+
+COVERAGE(MinV3CPP, 1)
+static inline Vec3 Min(Vec3 A, Vec3 B)
+{
+    ASSERT_COVERED(MinV3CPP);
+    return MinV3(A, B);
+}
+
+COVERAGE(MinV4CPP, 1)
+static inline Vec4 Min(Vec4 A, Vec4 B)
+{
+    ASSERT_COVERED(MinV4CPP);
+    return MinV4(A, B);
+}
  
+COVERAGE(MaxV2CPP, 1)
+static inline Vec2 Max(Vec2 A, Vec2 B)
+{
+    ASSERT_COVERED(MaxV2CPP);
+    return MaxV2(A, B);
+}
+
+COVERAGE(MaxV3CPP, 1)
+static inline Vec3 Max(Vec3 A, Vec3 B)
+{
+    ASSERT_COVERED(MaxV3CPP);
+    return MaxV3(A, B);
+}
+
+COVERAGE(MaxV4CPP, 1)
+static inline Vec4 Max(Vec4 A, Vec4 B)
+{
+    ASSERT_COVERED(MaxV4CPP);
+    return MaxV4(A, B);
+}
+
+COVERAGE(AbsV2CPP, 1)
+static inline Vec2 Abs(Vec2 V)
+{
+    ASSERT_COVERED(AbsV2CPP);
+    return AbsV2(V);
+}
+
+COVERAGE(AbsV3CPP, 1)
+static inline Vec3 Abs(Vec3 V)
+{
+    ASSERT_COVERED(AbsV3CPP);
+    return AbsV3(V);
+}
+
+COVERAGE(AbsV4CPP, 1)
+static inline Vec4 Abs(Vec4 V)
+{
+    ASSERT_COVERED(AbsV4CPP);
+    return AbsV4(V);
+}
+
 COVERAGE(LerpV2CPP, 1)
 static inline Vec2 Lerp(Vec2 Left, Vec2 Right, FLOAT Time)
 {
@@ -2702,24 +2838,24 @@ static inline Vec4 Lerp(Vec4 Left, Vec4 Right, FLOAT Time)
 }
 
 COVERAGE(ClampV2CPP, 1)
-static inline Vec2 Clamp(Vec2 Value, Vec2 Min, Vec2 Max)
+static inline Vec2 Clamp(Vec2 Value, Vec2 MinValue, Vec2 MaxValue)
 {
     ASSERT_COVERED(ClampV2CPP);
-    return ClampV2(Value, Min, Max);
+    return ClampV2(Value, MinValue, MaxValue);
 }
 
 COVERAGE(ClampV3CPP, 1)
-static inline Vec3 Clamp(Vec3 Value, Vec3 Min, Vec3 Max)
+static inline Vec3 Clamp(Vec3 Value, Vec3 MinValue, Vec3 MaxValue)
 {
     ASSERT_COVERED(ClampV3CPP);
-    return ClampV3(Value, Min, Max);
+    return ClampV3(Value, MinValue, MaxValue);
 }
 
 COVERAGE(ClampV4CPP, 1)
-static inline Vec4 Clamp(Vec4 Value, Vec4 Min, Vec4 Max)
+static inline Vec4 Clamp(Vec4 Value, Vec4 MinValue, Vec4 MaxValue)
 {
     ASSERT_COVERED(ClampV4CPP);
-    return ClampV4(Value, Min, Max);
+    return ClampV4(Value, MinValue, MaxValue);
 }
 
 COVERAGE(TransposeM2CPP, 1)
@@ -3837,6 +3973,27 @@ static inline Vec4 operator-(Vec4 In)
         Vec4: DotV4  \
 )(A, B)
 
+#define Min(A, B) _Generic((A), \
+        FLOAT: Min, \
+        Vec2: MinV2, \
+        Vec3: MinV3, \
+        Vec4: MinV4, \
+)(A, B)
+
+#define Max(A, B) _Generic((A), \
+        FLOAT: Max, \
+        Vec2: MaxV2, \
+        Vec3: MaxV3, \
+        Vec4: MaxV4, \
+)(A, B)
+
+#define Abs(V) _Generic((A), \
+        FLOAT: Abs, \
+        Vec2: AbsV2, \
+        Vec3: AbsV3, \
+        Vec4: AbsV4, \
+)(V)
+
 #define Lerp(A, B, T) _Generic((A), \
         FLOAT: Lerp, \
         Vec2: LerpV2, \
@@ -3844,12 +4001,12 @@ static inline Vec4 operator-(Vec4 In)
         Vec4: LerpV4 \
 )(A, B, T)
 
-#define Clamp(V, Min, Max) _Generic((V), \
+#define Clamp(V, MinValue, MaxValue) _Generic((V), \
         FLOAT: Clamp, \
         Vec2: ClampV2, \
         Vec3: ClampV3 \
         Vec4: ClampV4 \
-)(V, Min, Max)
+)(V, MinValue, MaxValue)
 
 #define Eq(A, B) _Generic((A), \
         Vec2: EqV2, \

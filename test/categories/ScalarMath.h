@@ -38,6 +38,30 @@ TEST(ScalarMath, RSquareRootF)
     EXPECT_NEAR(InvSqrtF(10.0f), 0.31616211f, 0.0001f);
 }
 
+TEST(ScalarMath, Min)
+{
+    float A = -2.0f, B = 0.0f, C = 5.0f;
+    EXPECT_FLOAT_EQ(Min(A, B), A);
+    EXPECT_FLOAT_EQ(Min(B, C), B);
+    EXPECT_FLOAT_EQ(Min(A, C), A);
+}
+
+
+TEST(ScalarMath, Max)
+{
+    float A = -2.0f, B = 0.0f, C = 5.0f;
+    EXPECT_FLOAT_EQ(Max(A, B), B);
+    EXPECT_FLOAT_EQ(Max(B, C), C);
+    EXPECT_FLOAT_EQ(Max(A, C), C);
+}
+
+TEST(ScalarMath, Abs)
+{
+    EXPECT_FLOAT_EQ(Abs(-1.0f), 1.0f);
+    EXPECT_FLOAT_EQ(Abs(0.0f), 0.0f);
+    EXPECT_FLOAT_EQ(Abs(2.0f), 2.0f);
+}
+
 TEST(ScalarMath, Lerp)
 {
     EXPECT_FLOAT_EQ(Lerp(-2.0f, 2.0f, 0.0f), -2.0f);
