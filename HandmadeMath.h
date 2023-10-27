@@ -3977,21 +3977,21 @@ static inline Vec4 operator-(Vec4 In)
         FLOAT: Min, \
         Vec2: MinV2, \
         Vec3: MinV3, \
-        Vec4: MinV4, \
+        Vec4: MinV4 \
 )(A, B)
 
 #define Max(A, B) _Generic((A), \
         FLOAT: Max, \
         Vec2: MaxV2, \
         Vec3: MaxV3, \
-        Vec4: MaxV4, \
+        Vec4: MaxV4 \
 )(A, B)
 
 #define Abs(V) _Generic((A), \
         FLOAT: Abs, \
         Vec2: AbsV2, \
         Vec3: AbsV3, \
-        Vec4: AbsV4, \
+        Vec4: AbsV4 \
 )(V)
 
 #define Lerp(A, B, T) _Generic((A), \
