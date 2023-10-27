@@ -359,6 +359,60 @@ TEST(VectorOps, AbsV4)
 #endif
 }
 
+TEST(VectorOps, IsFiniteV2)
+{
+    EXPECT_TRUE(IsFiniteV2(V2(0, 0)));
+    EXPECT_FALSE(IsFiniteV2(V2(0, INFINITY)));
+    EXPECT_FALSE(IsFiniteV2(V2(INFINITY, 0)));
+    EXPECT_FALSE(IsFiniteV2(V2(INFINITY, INFINITY)));
+#ifdef __cplusplus
+    {
+        EXPECT_TRUE(IsFinite(V2(0, 0)));
+        EXPECT_FALSE(IsFinite(V2(0, INFINITY)));
+        EXPECT_FALSE(IsFinite(V2(INFINITY, 0)));
+        EXPECT_FALSE(IsFinite(V2(INFINITY, INFINITY)));
+    }
+#endif
+}
+
+TEST(VectorOps, IsFiniteV3)
+{
+    EXPECT_TRUE(IsFiniteV3(V3(0, 0, 0)));
+    EXPECT_FALSE(IsFiniteV3(V3(INFINITY, 0, 0)));
+    EXPECT_FALSE(IsFiniteV3(V3(0, INFINITY, 0)));
+    EXPECT_FALSE(IsFiniteV3(V3(0, 0, INFINITY)));
+    EXPECT_FALSE(IsFiniteV3(V3(INFINITY, INFINITY, INFINITY)));
+#ifdef __cplusplus
+    {
+        EXPECT_TRUE(IsFinite(V3(0, 0, 0)));
+        EXPECT_FALSE(IsFinite(V3(INFINITY, 0, 0)));
+        EXPECT_FALSE(IsFinite(V3(0, INFINITY, 0)));
+        EXPECT_FALSE(IsFinite(V3(0, 0, INFINITY)));
+        EXPECT_FALSE(IsFinite(V3(INFINITY, INFINITY, INFINITY)));
+    }
+#endif
+}
+
+TEST(VectorOps, IsFiniteV4)
+{
+    EXPECT_TRUE(IsFiniteV4(V4(0, 0, 0, 0)));
+    EXPECT_FALSE(IsFiniteV4(V4(INFINITY, 0, 0, 0)));
+    EXPECT_FALSE(IsFiniteV4(V4(0, INFINITY, 0, 0)));
+    EXPECT_FALSE(IsFiniteV4(V4(0, 0, INFINITY, 0)));
+    EXPECT_FALSE(IsFiniteV4(V4(0, 0, 0, INFINITY)));
+    EXPECT_FALSE(IsFiniteV4(V4(INFINITY, INFINITY, INFINITY, INFINITY)));
+#ifdef __cplusplus
+    {
+        EXPECT_TRUE(IsFinite(V4(0, 0, 0, 0)));
+        EXPECT_FALSE(IsFinite(V4(INFINITY, 0, 0, 0)));
+        EXPECT_FALSE(IsFinite(V4(0, INFINITY, 0, 0)));
+        EXPECT_FALSE(IsFinite(V4(0, 0, INFINITY, 0)));
+        EXPECT_FALSE(IsFinite(V4(0, 0, 0, INFINITY)));
+        EXPECT_FALSE(IsFinite(V4(INFINITY, INFINITY, INFINITY, INFINITY)));
+    }
+#endif
+}
+
 TEST(VectorOps, LerpV2)
 {
     Vec2 v1 = V2(1.0f, 0.0f);

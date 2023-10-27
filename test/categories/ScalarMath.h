@@ -46,7 +46,6 @@ TEST(ScalarMath, Min)
     EXPECT_FLOAT_EQ(Min(A, C), A);
 }
 
-
 TEST(ScalarMath, Max)
 {
     float A = -2.0f, B = 0.0f, C = 5.0f;
@@ -74,4 +73,15 @@ TEST(ScalarMath, Clamp)
     EXPECT_FLOAT_EQ(Clamp(0.0f, -2.0f, 2.0f), 0.0f);
     EXPECT_FLOAT_EQ(Clamp(-3.0f, -2.0f, 2.0f), -2.0f);
     EXPECT_FLOAT_EQ(Clamp(3.0f, -2.0f, 2.0f), 2.0f);
+}
+
+TEST(ScalarMath, IsFinite)
+{
+    EXPECT_TRUE(IsFinite(-5.0f));
+    EXPECT_TRUE(IsFinite(239));
+    EXPECT_TRUE(IsFinite(3059.32f));
+    EXPECT_FALSE(IsFinite(NAN));
+    EXPECT_FALSE(IsFinite(INFINITY));
+    EXPECT_FALSE(IsFinite(-INFINITY));
+    EXPECT_FALSE(IsFinite(-NAN));
 }
