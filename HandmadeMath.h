@@ -4004,7 +4004,7 @@ static inline Vec4 operator-(Vec4 In)
 #define Clamp(V, MinValue, MaxValue) _Generic((V), \
         FLOAT: Clamp, \
         Vec2: ClampV2, \
-        Vec3: ClampV3 \
+        Vec3: ClampV3, \
         Vec4: ClampV4 \
 )(V, MinValue, MaxValue)
 
