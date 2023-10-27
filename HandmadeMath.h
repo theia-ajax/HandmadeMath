@@ -4058,7 +4058,7 @@ static inline Vec4 operator-(Vec4 In)
 #define IsFinite(V) _Generic((V), \
     Float: IsFinite,              \
     Vec2: IsFiniteV2,             \
-    Vec2: IsFiniteV3,             \
+    Vec3: IsFiniteV3,             \
     Vec4: IsFiniteV4)(V)
 
 #define Eq(A, B) _Generic((A), \
