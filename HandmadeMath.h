@@ -4037,7 +4037,7 @@ static inline Vec4 operator-(Vec4 In)
     Vec3: MaxV3,                \
     Vec4: MaxV4)(A, B)
 
-#define Abs(V) _Generic((A), \
+#define Abs(V) _Generic((V), \
     Float: Abs,              \
     Vec2: AbsV2,             \
     Vec3: AbsV3,             \
