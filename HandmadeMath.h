@@ -3990,21 +3990,17 @@ static inline Vec4 operator-(Vec4 In)
 
 #define Div(A, B) _Generic((B), \
     Float: _Generic((A),        \
-    Mat2: DivM2F,               \
-    Mat3: DivM3F,               \
-    Mat4: DivM4F,               \
-    Vec2: DivV2F,               \
-    Vec3: DivV3F,               \
-    Vec4: DivV4F,               \
-    Quat: DivQF),               \
-    Mat2: DivM2,                \
-    Mat3: DivM3,                \
-    Mat4: DivM4,                \
-    Quat: DivQ,                 \
+        Mat2: DivM2F,               \
+        Mat3: DivM3F,               \
+        Mat4: DivM4F,               \
+        Vec2: DivV2F,               \
+        Vec3: DivV3F,               \
+        Vec4: DivV4F,               \
+        Quat: DivQF),               \
     default: _Generic((A),      \
-    Vec2: DivV2,                \
-    Vec3: DivV3,                \
-    Vec4: DivV4))(A, B)
+        Vec2: DivV2,                \
+        Vec3: DivV3,                \
+        Vec4: DivV4))(A, B)
 
 #define Len(A) _Generic((A), \
     Vec2: LenV2,             \
