@@ -65,41 +65,41 @@ TEST(Transformations, LookAt)
 
     {    Mat4 result = LookAt_RH(V3(1.0f, 0.0f, 0.0f), V3(0.0f, 2.0f, 1.0f), V3(2.0f, 1.0f, 1.0f));
 
-        EXPECT_NEAR(result.Elements[0][0], 0.169031f, abs_error);
-        EXPECT_NEAR(result.Elements[0][1], 0.897085f, abs_error);
-        EXPECT_NEAR(result.Elements[0][2], 0.408248f, abs_error);
-        EXPECT_NEAR(result.Elements[0][3], 0.0f, abs_error);
-        EXPECT_NEAR(result.Elements[1][0], 0.507093f, abs_error);
-        EXPECT_NEAR(result.Elements[1][1], 0.276026f, abs_error);
-        EXPECT_NEAR(result.Elements[1][2], -0.816497f, abs_error);
-        EXPECT_NEAR(result.Elements[1][3], 0.0f, abs_error);
-        EXPECT_NEAR(result.Elements[2][0], -0.845154f, abs_error);
-        EXPECT_NEAR(result.Elements[2][1], 0.345033f, abs_error);
-        EXPECT_NEAR(result.Elements[2][2], -0.408248f, abs_error);
-        EXPECT_NEAR(result.Elements[2][3], 0.0f, abs_error);
-        EXPECT_NEAR(result.Elements[3][0], -0.169031f, abs_error);
-        EXPECT_NEAR(result.Elements[3][1], -0.897085f, abs_error);
-        EXPECT_NEAR(result.Elements[3][2], -0.408248f, abs_error);
-        EXPECT_NEAR(result.Elements[3][3], 1.0f, abs_error);
+        EXPECT_NEAR(result.Data[0][0], 0.169031f, abs_error);
+        EXPECT_NEAR(result.Data[0][1], 0.897085f, abs_error);
+        EXPECT_NEAR(result.Data[0][2], 0.408248f, abs_error);
+        EXPECT_NEAR(result.Data[0][3], 0.0f, abs_error);
+        EXPECT_NEAR(result.Data[1][0], 0.507093f, abs_error);
+        EXPECT_NEAR(result.Data[1][1], 0.276026f, abs_error);
+        EXPECT_NEAR(result.Data[1][2], -0.816497f, abs_error);
+        EXPECT_NEAR(result.Data[1][3], 0.0f, abs_error);
+        EXPECT_NEAR(result.Data[2][0], -0.845154f, abs_error);
+        EXPECT_NEAR(result.Data[2][1], 0.345033f, abs_error);
+        EXPECT_NEAR(result.Data[2][2], -0.408248f, abs_error);
+        EXPECT_NEAR(result.Data[2][3], 0.0f, abs_error);
+        EXPECT_NEAR(result.Data[3][0], -0.169031f, abs_error);
+        EXPECT_NEAR(result.Data[3][1], -0.897085f, abs_error);
+        EXPECT_NEAR(result.Data[3][2], -0.408248f, abs_error);
+        EXPECT_NEAR(result.Data[3][3], 1.0f, abs_error);
     }
     {    
         Mat4 result = LookAt_LH(V3(1.0f, 0.0f, 0.0f), V3(0.0f, 2.0f, 1.0f), V3(2.0f, 1.0f, 1.0f));
 
-        EXPECT_NEAR(result.Elements[0][0], -0.169031f, abs_error);
-        EXPECT_NEAR(result.Elements[0][1], 0.897085f, abs_error);
-        EXPECT_NEAR(result.Elements[0][2], -0.408248f, abs_error);
-        EXPECT_NEAR(result.Elements[0][3], 0.0f, abs_error);
-        EXPECT_NEAR(result.Elements[1][0], -0.507093f, abs_error);
-        EXPECT_NEAR(result.Elements[1][1], 0.276026f, abs_error);
-        EXPECT_NEAR(result.Elements[1][2], 0.816497f, abs_error);
-        EXPECT_NEAR(result.Elements[1][3], 0.0f, abs_error);
-        EXPECT_NEAR(result.Elements[2][0], 0.845154f, abs_error);
-        EXPECT_NEAR(result.Elements[2][1], 0.345033f, abs_error);
-        EXPECT_NEAR(result.Elements[2][2], 0.408248f, abs_error);
-        EXPECT_NEAR(result.Elements[2][3], 0.0f, abs_error);
-        EXPECT_NEAR(result.Elements[3][0], 0.169031f, abs_error);
-        EXPECT_NEAR(result.Elements[3][1], -0.897085f, abs_error);
-        EXPECT_NEAR(result.Elements[3][2], 0.408248f, abs_error);
-        EXPECT_NEAR(result.Elements[3][3], 1.0f, abs_error);
+        EXPECT_NEAR(result.Data[0][0], -0.169031f, abs_error);
+        EXPECT_NEAR(result.Data[0][1], 0.897085f, abs_error);
+        EXPECT_NEAR(result.Data[0][2], -0.408248f, abs_error);
+        EXPECT_NEAR(result.Data[0][3], 0.0f, abs_error);
+        EXPECT_NEAR(result.Data[1][0], -0.507093f, abs_error);
+        EXPECT_NEAR(result.Data[1][1], 0.276026f, abs_error);
+        EXPECT_NEAR(result.Data[1][2], 0.816497f, abs_error);
+        EXPECT_NEAR(result.Data[1][3], 0.0f, abs_error);
+        EXPECT_NEAR(result.Data[2][0], 0.845154f, abs_error);
+        EXPECT_NEAR(result.Data[2][1], 0.345033f, abs_error);
+        EXPECT_NEAR(result.Data[2][2], 0.408248f, abs_error);
+        EXPECT_NEAR(result.Data[2][3], 0.0f, abs_error);
+        EXPECT_NEAR(result.Data[3][0], 0.169031f, abs_error);
+        EXPECT_NEAR(result.Data[3][1], -0.897085f, abs_error);
+        EXPECT_NEAR(result.Data[3][2], 0.408248f, abs_error);
+        EXPECT_NEAR(result.Data[3][3], 1.0f, abs_error);
     }
 }

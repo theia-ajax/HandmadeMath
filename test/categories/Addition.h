@@ -106,45 +106,45 @@ TEST(Addition, Mat2)
     {
         for (int Row = 0; Row < 2; ++Row)
         {
-            a.Elements[Column][Row] = Counter++;
+            a.Data[Column][Row] = Counter++;
         }
     }
     for (int Column = 0; Column < 2; ++Column)
     {
         for (int Row = 0; Row < 2; ++Row)
         {
-            b.Elements[Column][Row] = Counter++;
+            b.Data[Column][Row] = Counter++;
         }
     }
 
     {
         Mat2 result = AddM2(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 6.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 8.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 10.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 12.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][0], 6.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][1], 8.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][0], 10.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][1], 12.0f); 
     }
 
 #ifdef __cplusplus
     {
         Mat2 result = Add(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 6.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 8.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 10.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 12.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][0], 6.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][1], 8.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][0], 10.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][1], 12.0f); 
     }
     {
         Mat2 result = a + b;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 6.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 8.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 10.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 12.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][0], 6.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][1], 8.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][0], 10.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][1], 12.0f); 
     }
     a += b;
-    EXPECT_FLOAT_EQ(a.Elements[0][0], 6.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[0][1], 8.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][0], 10.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][1], 12.0f); 
+    EXPECT_FLOAT_EQ(a.Data[0][0], 6.0f); 
+    EXPECT_FLOAT_EQ(a.Data[0][1], 8.0f); 
+    EXPECT_FLOAT_EQ(a.Data[1][0], 10.0f); 
+    EXPECT_FLOAT_EQ(a.Data[1][1], 12.0f); 
 #endif
 }
 
@@ -158,65 +158,65 @@ TEST(Addition, Mat3)
     {
         for (int Row = 0; Row < 3; ++Row)
         {
-            a.Elements[Column][Row] = Counter++;
+            a.Data[Column][Row] = Counter++;
         }
     }
     for (int Column = 0; Column < 3; ++Column)
     {
         for (int Row = 0; Row < 3; ++Row)
         {
-            b.Elements[Column][Row] = Counter++;
+            b.Data[Column][Row] = Counter++;
         }
     }
 
     {
         Mat3 result = AddM3(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 11.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 13.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 15.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 17.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 19.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 21.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 23.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 25.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 27.0f);   
+        EXPECT_FLOAT_EQ(result.Data[0][0], 11.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][1], 13.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][2], 15.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][0], 17.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][1], 19.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 21.0f); 
+        EXPECT_FLOAT_EQ(result.Data[2][0], 23.0f); 
+        EXPECT_FLOAT_EQ(result.Data[2][1], 25.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 27.0f);   
     }
 
 #ifdef __cplusplus
     {
         Mat3 result = Add(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 11.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 13.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 15.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 17.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 19.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 21.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 23.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 25.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 27.0f);   
+        EXPECT_FLOAT_EQ(result.Data[0][0], 11.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][1], 13.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][2], 15.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][0], 17.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][1], 19.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 21.0f); 
+        EXPECT_FLOAT_EQ(result.Data[2][0], 23.0f); 
+        EXPECT_FLOAT_EQ(result.Data[2][1], 25.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 27.0f);   
     }
     {
         Mat3 result = a + b;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 11.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 13.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 15.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 17.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 19.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 21.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 23.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 25.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 27.0f);   
+        EXPECT_FLOAT_EQ(result.Data[0][0], 11.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][1], 13.0f); 
+        EXPECT_FLOAT_EQ(result.Data[0][2], 15.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][0], 17.0f); 
+        EXPECT_FLOAT_EQ(result.Data[1][1], 19.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 21.0f); 
+        EXPECT_FLOAT_EQ(result.Data[2][0], 23.0f); 
+        EXPECT_FLOAT_EQ(result.Data[2][1], 25.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 27.0f);   
     }
     a += b;
-    EXPECT_FLOAT_EQ(a.Elements[0][0], 11.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[0][1], 13.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[0][2], 15.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][0], 17.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][1], 19.0f);
-    EXPECT_FLOAT_EQ(a.Elements[1][2], 21.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[2][0], 23.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[2][1], 25.0f);
-    EXPECT_FLOAT_EQ(a.Elements[2][2], 27.0f);   
+    EXPECT_FLOAT_EQ(a.Data[0][0], 11.0f); 
+    EXPECT_FLOAT_EQ(a.Data[0][1], 13.0f); 
+    EXPECT_FLOAT_EQ(a.Data[0][2], 15.0f); 
+    EXPECT_FLOAT_EQ(a.Data[1][0], 17.0f); 
+    EXPECT_FLOAT_EQ(a.Data[1][1], 19.0f);
+    EXPECT_FLOAT_EQ(a.Data[1][2], 21.0f); 
+    EXPECT_FLOAT_EQ(a.Data[2][0], 23.0f); 
+    EXPECT_FLOAT_EQ(a.Data[2][1], 25.0f);
+    EXPECT_FLOAT_EQ(a.Data[2][2], 27.0f);   
 #endif  
 }
 
@@ -231,7 +231,7 @@ TEST(Addition, Mat4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            m4_1.Elements[Column][Row] = Counter;
+            m4_1.Data[Column][Row] = Counter;
             ++Counter;
         }
     }
@@ -239,7 +239,7 @@ TEST(Addition, Mat4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            m4_2.Elements[Column][Row] = Counter;
+            m4_2.Data[Column][Row] = Counter;
             ++Counter;
         }
     }
@@ -252,7 +252,7 @@ TEST(Addition, Mat4)
         {
             for (int Row = 0; Row < 4; ++Row)
             {
-                EXPECT_FLOAT_EQ(result.Elements[Column][Row], Expected);
+                EXPECT_FLOAT_EQ(result.Data[Column][Row], Expected);
                 Expected += 2.0f;
             }
         }
@@ -265,7 +265,7 @@ TEST(Addition, Mat4)
         {
             for (int Row = 0; Row < 4; ++Row)
             {
-                EXPECT_FLOAT_EQ(result.Elements[Column][Row], Expected);
+                EXPECT_FLOAT_EQ(result.Data[Column][Row], Expected);
                 Expected += 2.0f;
             }
         }
@@ -277,7 +277,7 @@ TEST(Addition, Mat4)
         {
             for (int Row = 0; Row < 4; ++Row)
             {
-                EXPECT_FLOAT_EQ(result.Elements[Column][Row], Expected);
+                EXPECT_FLOAT_EQ(result.Data[Column][Row], Expected);
                 Expected += 2.0f;
             }
         }
@@ -289,7 +289,7 @@ TEST(Addition, Mat4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            EXPECT_FLOAT_EQ(m4_1.Elements[Column][Row], Expected);
+            EXPECT_FLOAT_EQ(m4_1.Data[Column][Row], Expected);
             Expected += 2.0f;
         }
     }

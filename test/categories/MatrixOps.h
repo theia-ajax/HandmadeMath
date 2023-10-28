@@ -14,18 +14,18 @@ TEST(InvMatrix, Transpose)
 
         {
             Mat2 result = TransposeM2(Matrix);
-            EXPECT_FLOAT_EQ(result.Elements[0][0], Expect.Elements[0][0]);
-            EXPECT_FLOAT_EQ(result.Elements[0][1], Expect.Elements[0][1]);
-            EXPECT_FLOAT_EQ(result.Elements[1][0], Expect.Elements[1][0]);
-            EXPECT_FLOAT_EQ(result.Elements[1][1], Expect.Elements[1][1]);
+            EXPECT_FLOAT_EQ(result.Data[0][0], Expect.Data[0][0]);
+            EXPECT_FLOAT_EQ(result.Data[0][1], Expect.Data[0][1]);
+            EXPECT_FLOAT_EQ(result.Data[1][0], Expect.Data[1][0]);
+            EXPECT_FLOAT_EQ(result.Data[1][1], Expect.Data[1][1]);
         }
 #ifdef __cplusplus
         {
             Mat2 result = Transpose(Matrix);
-            EXPECT_FLOAT_EQ(result.Elements[0][0], Expect.Elements[0][0]);
-            EXPECT_FLOAT_EQ(result.Elements[0][1], Expect.Elements[0][1]);
-            EXPECT_FLOAT_EQ(result.Elements[1][0], Expect.Elements[1][0]);
-            EXPECT_FLOAT_EQ(result.Elements[1][1], Expect.Elements[1][1]);
+            EXPECT_FLOAT_EQ(result.Data[0][0], Expect.Data[0][0]);
+            EXPECT_FLOAT_EQ(result.Data[0][1], Expect.Data[0][1]);
+            EXPECT_FLOAT_EQ(result.Data[1][0], Expect.Data[1][0]);
+            EXPECT_FLOAT_EQ(result.Data[1][1], Expect.Data[1][1]);
         }
 #endif
     }
@@ -44,28 +44,28 @@ TEST(InvMatrix, Transpose)
 
         {
             Mat3 result = TransposeM3(Matrix);
-            EXPECT_FLOAT_EQ(result.Elements[0][0], Expect.Elements[0][0]);
-            EXPECT_FLOAT_EQ(result.Elements[0][1], Expect.Elements[0][1]);
-            EXPECT_FLOAT_EQ(result.Elements[0][2], Expect.Elements[0][2]);
-            EXPECT_FLOAT_EQ(result.Elements[1][0], Expect.Elements[1][0]);
-            EXPECT_FLOAT_EQ(result.Elements[1][1], Expect.Elements[1][1]);
-            EXPECT_FLOAT_EQ(result.Elements[1][2], Expect.Elements[1][2]);
-            EXPECT_FLOAT_EQ(result.Elements[2][0], Expect.Elements[2][0]);
-            EXPECT_FLOAT_EQ(result.Elements[2][1], Expect.Elements[2][1]);
-            EXPECT_FLOAT_EQ(result.Elements[2][2], Expect.Elements[2][2]);
+            EXPECT_FLOAT_EQ(result.Data[0][0], Expect.Data[0][0]);
+            EXPECT_FLOAT_EQ(result.Data[0][1], Expect.Data[0][1]);
+            EXPECT_FLOAT_EQ(result.Data[0][2], Expect.Data[0][2]);
+            EXPECT_FLOAT_EQ(result.Data[1][0], Expect.Data[1][0]);
+            EXPECT_FLOAT_EQ(result.Data[1][1], Expect.Data[1][1]);
+            EXPECT_FLOAT_EQ(result.Data[1][2], Expect.Data[1][2]);
+            EXPECT_FLOAT_EQ(result.Data[2][0], Expect.Data[2][0]);
+            EXPECT_FLOAT_EQ(result.Data[2][1], Expect.Data[2][1]);
+            EXPECT_FLOAT_EQ(result.Data[2][2], Expect.Data[2][2]);
         }
 #ifdef __cplusplus
         {
             Mat3 result = Transpose(Matrix);
-            EXPECT_FLOAT_EQ(result.Elements[0][0], Expect.Elements[0][0]);
-            EXPECT_FLOAT_EQ(result.Elements[0][1], Expect.Elements[0][1]);
-            EXPECT_FLOAT_EQ(result.Elements[0][2], Expect.Elements[0][2]);
-            EXPECT_FLOAT_EQ(result.Elements[1][0], Expect.Elements[1][0]);
-            EXPECT_FLOAT_EQ(result.Elements[1][1], Expect.Elements[1][1]);
-            EXPECT_FLOAT_EQ(result.Elements[1][2], Expect.Elements[1][2]);
-            EXPECT_FLOAT_EQ(result.Elements[2][0], Expect.Elements[2][0]);
-            EXPECT_FLOAT_EQ(result.Elements[2][1], Expect.Elements[2][1]);
-            EXPECT_FLOAT_EQ(result.Elements[2][2], Expect.Elements[2][2]);
+            EXPECT_FLOAT_EQ(result.Data[0][0], Expect.Data[0][0]);
+            EXPECT_FLOAT_EQ(result.Data[0][1], Expect.Data[0][1]);
+            EXPECT_FLOAT_EQ(result.Data[0][2], Expect.Data[0][2]);
+            EXPECT_FLOAT_EQ(result.Data[1][0], Expect.Data[1][0]);
+            EXPECT_FLOAT_EQ(result.Data[1][1], Expect.Data[1][1]);
+            EXPECT_FLOAT_EQ(result.Data[1][2], Expect.Data[1][2]);
+            EXPECT_FLOAT_EQ(result.Data[2][0], Expect.Data[2][0]);
+            EXPECT_FLOAT_EQ(result.Data[2][1], Expect.Data[2][1]);
+            EXPECT_FLOAT_EQ(result.Data[2][2], Expect.Data[2][2]);
         }
 #endif
     }
@@ -84,28 +84,28 @@ TEST(InvMatrix, Transpose)
         };
         {
             Mat4 result = TransposeM4(Matrix);
-            EXPECT_FLOAT_EQ(result.Elements[0][0], Expect.Elements[0][0]);
-            EXPECT_FLOAT_EQ(result.Elements[0][1], Expect.Elements[0][1]);
-            EXPECT_FLOAT_EQ(result.Elements[0][2], Expect.Elements[0][2]);
-            EXPECT_FLOAT_EQ(result.Elements[1][0], Expect.Elements[1][0]);
-            EXPECT_FLOAT_EQ(result.Elements[1][1], Expect.Elements[1][1]);
-            EXPECT_FLOAT_EQ(result.Elements[1][2], Expect.Elements[1][2]);
-            EXPECT_FLOAT_EQ(result.Elements[2][0], Expect.Elements[2][0]);
-            EXPECT_FLOAT_EQ(result.Elements[2][1], Expect.Elements[2][1]);
-            EXPECT_FLOAT_EQ(result.Elements[2][2], Expect.Elements[2][2]);
+            EXPECT_FLOAT_EQ(result.Data[0][0], Expect.Data[0][0]);
+            EXPECT_FLOAT_EQ(result.Data[0][1], Expect.Data[0][1]);
+            EXPECT_FLOAT_EQ(result.Data[0][2], Expect.Data[0][2]);
+            EXPECT_FLOAT_EQ(result.Data[1][0], Expect.Data[1][0]);
+            EXPECT_FLOAT_EQ(result.Data[1][1], Expect.Data[1][1]);
+            EXPECT_FLOAT_EQ(result.Data[1][2], Expect.Data[1][2]);
+            EXPECT_FLOAT_EQ(result.Data[2][0], Expect.Data[2][0]);
+            EXPECT_FLOAT_EQ(result.Data[2][1], Expect.Data[2][1]);
+            EXPECT_FLOAT_EQ(result.Data[2][2], Expect.Data[2][2]);
         }
 #ifdef __cplusplus
         {
             Mat4 result = Transpose(Matrix);
-            EXPECT_FLOAT_EQ(result.Elements[0][0], Expect.Elements[0][0]);
-            EXPECT_FLOAT_EQ(result.Elements[0][1], Expect.Elements[0][1]);
-            EXPECT_FLOAT_EQ(result.Elements[0][2], Expect.Elements[0][2]);
-            EXPECT_FLOAT_EQ(result.Elements[1][0], Expect.Elements[1][0]);
-            EXPECT_FLOAT_EQ(result.Elements[1][1], Expect.Elements[1][1]);
-            EXPECT_FLOAT_EQ(result.Elements[1][2], Expect.Elements[1][2]);
-            EXPECT_FLOAT_EQ(result.Elements[2][0], Expect.Elements[2][0]);
-            EXPECT_FLOAT_EQ(result.Elements[2][1], Expect.Elements[2][1]);
-            EXPECT_FLOAT_EQ(result.Elements[2][2], Expect.Elements[2][2]);
+            EXPECT_FLOAT_EQ(result.Data[0][0], Expect.Data[0][0]);
+            EXPECT_FLOAT_EQ(result.Data[0][1], Expect.Data[0][1]);
+            EXPECT_FLOAT_EQ(result.Data[0][2], Expect.Data[0][2]);
+            EXPECT_FLOAT_EQ(result.Data[1][0], Expect.Data[1][0]);
+            EXPECT_FLOAT_EQ(result.Data[1][1], Expect.Data[1][1]);
+            EXPECT_FLOAT_EQ(result.Data[1][2], Expect.Data[1][2]);
+            EXPECT_FLOAT_EQ(result.Data[2][0], Expect.Data[2][0]);
+            EXPECT_FLOAT_EQ(result.Data[2][1], Expect.Data[2][1]);
+            EXPECT_FLOAT_EQ(result.Data[2][2], Expect.Data[2][2]);
         }
 #endif
     }
@@ -129,22 +129,22 @@ TEST(InvMatrix, InvGeneral)
         float Det = DeterminantM4(Matrix);
         EXPECT_FLOAT_EQ(Det, -80.0f);
 
-        EXPECT_FLOAT_EQ(Result.Elements[0][0], Expect.Elements[0][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][1], Expect.Elements[0][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][2], Expect.Elements[0][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][3], Expect.Elements[0][3]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][0], Expect.Elements[1][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][1], Expect.Elements[1][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][2], Expect.Elements[1][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][3], Expect.Elements[1][3]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][0], Expect.Elements[2][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][1], Expect.Elements[2][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][2], Expect.Elements[2][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][3], Expect.Elements[2][3]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][0], Expect.Elements[3][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][1], Expect.Elements[3][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][2], Expect.Elements[3][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][3], Expect.Elements[3][3]);
+        EXPECT_FLOAT_EQ(Result.Data[0][0], Expect.Data[0][0]);
+        EXPECT_FLOAT_EQ(Result.Data[0][1], Expect.Data[0][1]);
+        EXPECT_FLOAT_EQ(Result.Data[0][2], Expect.Data[0][2]);
+        EXPECT_FLOAT_EQ(Result.Data[0][3], Expect.Data[0][3]);
+        EXPECT_FLOAT_EQ(Result.Data[1][0], Expect.Data[1][0]);
+        EXPECT_FLOAT_EQ(Result.Data[1][1], Expect.Data[1][1]);
+        EXPECT_FLOAT_EQ(Result.Data[1][2], Expect.Data[1][2]);
+        EXPECT_FLOAT_EQ(Result.Data[1][3], Expect.Data[1][3]);
+        EXPECT_FLOAT_EQ(Result.Data[2][0], Expect.Data[2][0]);
+        EXPECT_FLOAT_EQ(Result.Data[2][1], Expect.Data[2][1]);
+        EXPECT_FLOAT_EQ(Result.Data[2][2], Expect.Data[2][2]);
+        EXPECT_FLOAT_EQ(Result.Data[2][3], Expect.Data[2][3]);
+        EXPECT_FLOAT_EQ(Result.Data[3][0], Expect.Data[3][0]);
+        EXPECT_FLOAT_EQ(Result.Data[3][1], Expect.Data[3][1]);
+        EXPECT_FLOAT_EQ(Result.Data[3][2], Expect.Data[3][2]);
+        EXPECT_FLOAT_EQ(Result.Data[3][3], Expect.Data[3][3]);
 
 #ifdef __cplusplus
         Inverse = InvGeneral(Matrix);
@@ -153,22 +153,22 @@ TEST(InvMatrix, InvGeneral)
         Det = Determinant(Matrix);
         EXPECT_FLOAT_EQ(Det, -80.0f);
 
-        EXPECT_FLOAT_EQ(Result.Elements[0][0], Expect.Elements[0][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][1], Expect.Elements[0][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][2], Expect.Elements[0][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][3], Expect.Elements[0][3]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][0], Expect.Elements[1][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][1], Expect.Elements[1][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][2], Expect.Elements[1][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][3], Expect.Elements[1][3]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][0], Expect.Elements[2][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][1], Expect.Elements[2][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][2], Expect.Elements[2][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][3], Expect.Elements[2][3]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][0], Expect.Elements[3][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][1], Expect.Elements[3][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][2], Expect.Elements[3][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[3][3], Expect.Elements[3][3]);
+        EXPECT_FLOAT_EQ(Result.Data[0][0], Expect.Data[0][0]);
+        EXPECT_FLOAT_EQ(Result.Data[0][1], Expect.Data[0][1]);
+        EXPECT_FLOAT_EQ(Result.Data[0][2], Expect.Data[0][2]);
+        EXPECT_FLOAT_EQ(Result.Data[0][3], Expect.Data[0][3]);
+        EXPECT_FLOAT_EQ(Result.Data[1][0], Expect.Data[1][0]);
+        EXPECT_FLOAT_EQ(Result.Data[1][1], Expect.Data[1][1]);
+        EXPECT_FLOAT_EQ(Result.Data[1][2], Expect.Data[1][2]);
+        EXPECT_FLOAT_EQ(Result.Data[1][3], Expect.Data[1][3]);
+        EXPECT_FLOAT_EQ(Result.Data[2][0], Expect.Data[2][0]);
+        EXPECT_FLOAT_EQ(Result.Data[2][1], Expect.Data[2][1]);
+        EXPECT_FLOAT_EQ(Result.Data[2][2], Expect.Data[2][2]);
+        EXPECT_FLOAT_EQ(Result.Data[2][3], Expect.Data[2][3]);
+        EXPECT_FLOAT_EQ(Result.Data[3][0], Expect.Data[3][0]);
+        EXPECT_FLOAT_EQ(Result.Data[3][1], Expect.Data[3][1]);
+        EXPECT_FLOAT_EQ(Result.Data[3][2], Expect.Data[3][2]);
+        EXPECT_FLOAT_EQ(Result.Data[3][3], Expect.Data[3][3]);
 #endif
     }
 
@@ -186,15 +186,15 @@ TEST(InvMatrix, InvGeneral)
         float Det = DeterminantM3(Matrix);
         EXPECT_FLOAT_EQ(Det, -12.0f);
 
-        EXPECT_FLOAT_EQ(Result.Elements[0][0], Expect.Elements[0][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][1], Expect.Elements[0][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][2], Expect.Elements[0][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][0], Expect.Elements[1][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][1], Expect.Elements[1][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][2], Expect.Elements[1][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][0], Expect.Elements[2][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][1], Expect.Elements[2][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][2], Expect.Elements[2][2]);
+        EXPECT_FLOAT_EQ(Result.Data[0][0], Expect.Data[0][0]);
+        EXPECT_FLOAT_EQ(Result.Data[0][1], Expect.Data[0][1]);
+        EXPECT_FLOAT_EQ(Result.Data[0][2], Expect.Data[0][2]);
+        EXPECT_FLOAT_EQ(Result.Data[1][0], Expect.Data[1][0]);
+        EXPECT_FLOAT_EQ(Result.Data[1][1], Expect.Data[1][1]);
+        EXPECT_FLOAT_EQ(Result.Data[1][2], Expect.Data[1][2]);
+        EXPECT_FLOAT_EQ(Result.Data[2][0], Expect.Data[2][0]);
+        EXPECT_FLOAT_EQ(Result.Data[2][1], Expect.Data[2][1]);
+        EXPECT_FLOAT_EQ(Result.Data[2][2], Expect.Data[2][2]);
 
 #ifdef __cplusplus
         Inverse = InvGeneral(Matrix);
@@ -202,15 +202,15 @@ TEST(InvMatrix, InvGeneral)
         Det = Determinant(Matrix);
         EXPECT_FLOAT_EQ(Det, -12.0f);
 
-        EXPECT_FLOAT_EQ(Result.Elements[0][0], Expect.Elements[0][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][1], Expect.Elements[0][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][2], Expect.Elements[0][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][0], Expect.Elements[1][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][1], Expect.Elements[1][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][2], Expect.Elements[1][2]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][0], Expect.Elements[2][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][1], Expect.Elements[2][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[2][2], Expect.Elements[2][2]);
+        EXPECT_FLOAT_EQ(Result.Data[0][0], Expect.Data[0][0]);
+        EXPECT_FLOAT_EQ(Result.Data[0][1], Expect.Data[0][1]);
+        EXPECT_FLOAT_EQ(Result.Data[0][2], Expect.Data[0][2]);
+        EXPECT_FLOAT_EQ(Result.Data[1][0], Expect.Data[1][0]);
+        EXPECT_FLOAT_EQ(Result.Data[1][1], Expect.Data[1][1]);
+        EXPECT_FLOAT_EQ(Result.Data[1][2], Expect.Data[1][2]);
+        EXPECT_FLOAT_EQ(Result.Data[2][0], Expect.Data[2][0]);
+        EXPECT_FLOAT_EQ(Result.Data[2][1], Expect.Data[2][1]);
+        EXPECT_FLOAT_EQ(Result.Data[2][2], Expect.Data[2][2]);
 #endif
     }
 
@@ -227,10 +227,10 @@ TEST(InvMatrix, InvGeneral)
         float Det = DeterminantM2(Matrix);
         EXPECT_FLOAT_EQ(Det, 58.0f);
 
-        EXPECT_FLOAT_EQ(Result.Elements[0][0], Expect.Elements[0][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][1], Expect.Elements[0][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][0], Expect.Elements[1][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][1], Expect.Elements[1][1]);
+        EXPECT_FLOAT_EQ(Result.Data[0][0], Expect.Data[0][0]);
+        EXPECT_FLOAT_EQ(Result.Data[0][1], Expect.Data[0][1]);
+        EXPECT_FLOAT_EQ(Result.Data[1][0], Expect.Data[1][0]);
+        EXPECT_FLOAT_EQ(Result.Data[1][1], Expect.Data[1][1]);
 
 #ifdef __cplusplus
         Inverse = InvGeneral(Matrix);
@@ -238,10 +238,10 @@ TEST(InvMatrix, InvGeneral)
         Det = Determinant(Matrix);
         EXPECT_FLOAT_EQ(Det, 58.0f);
 
-        EXPECT_FLOAT_EQ(Result.Elements[0][0], Expect.Elements[0][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[0][1], Expect.Elements[0][1]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][0], Expect.Elements[1][0]);
-        EXPECT_FLOAT_EQ(Result.Elements[1][1], Expect.Elements[1][1]);
+        EXPECT_FLOAT_EQ(Result.Data[0][0], Expect.Data[0][0]);
+        EXPECT_FLOAT_EQ(Result.Data[0][1], Expect.Data[0][1]);
+        EXPECT_FLOAT_EQ(Result.Data[1][0], Expect.Data[1][0]);
+        EXPECT_FLOAT_EQ(Result.Data[1][1], Expect.Data[1][1]);
 #endif
     }    
 }

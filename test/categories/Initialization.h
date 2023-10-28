@@ -15,8 +15,8 @@ TEST(Initialization, Vectors)
     EXPECT_FLOAT_EQ(v2.Right, 2.0f);
     EXPECT_FLOAT_EQ(v2.Width, 1.0f);
     EXPECT_FLOAT_EQ(v2.Height, 2.0f);
-    EXPECT_FLOAT_EQ(v2.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v2.Elements[1], 2.0f);
+    EXPECT_FLOAT_EQ(v2.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v2.Data[1], 2.0f);
 #ifdef __cplusplus
     EXPECT_FLOAT_EQ(v2[0], 1.0f);
     EXPECT_FLOAT_EQ(v2[1], 2.0f);
@@ -36,17 +36,17 @@ TEST(Initialization, Vectors)
     EXPECT_FLOAT_EQ(v3.R, 1.0f);
     EXPECT_FLOAT_EQ(v3.G, 2.0f);
     EXPECT_FLOAT_EQ(v3.B, 3.0f);
-    EXPECT_FLOAT_EQ(v3.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v3.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v3.Elements[2], 3.0f);
-    EXPECT_FLOAT_EQ(v3.XY.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v3.XY.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v3.YZ.Elements[0], 2.0f);
-    EXPECT_FLOAT_EQ(v3.YZ.Elements[1], 3.0f);
-    EXPECT_FLOAT_EQ(v3.UV.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v3.UV.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v3.VW.Elements[0], 2.0f);
-    EXPECT_FLOAT_EQ(v3.VW.Elements[1], 3.0f);
+    EXPECT_FLOAT_EQ(v3.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v3.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v3.Data[2], 3.0f);
+    EXPECT_FLOAT_EQ(v3.XY.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v3.XY.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v3.YZ.Data[0], 2.0f);
+    EXPECT_FLOAT_EQ(v3.YZ.Data[1], 3.0f);
+    EXPECT_FLOAT_EQ(v3.UV.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v3.UV.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v3.VW.Data[0], 2.0f);
+    EXPECT_FLOAT_EQ(v3.VW.Data[1], 3.0f);
 #ifdef __cplusplus
     EXPECT_FLOAT_EQ(v3[0], 1.0f);
     EXPECT_FLOAT_EQ(v3[1], 2.0f);
@@ -67,20 +67,20 @@ TEST(Initialization, Vectors)
     EXPECT_FLOAT_EQ(v4.G, 2.0f);
     EXPECT_FLOAT_EQ(v4.B, 3.0f);
     EXPECT_FLOAT_EQ(v4.A, 4.0f);
-    EXPECT_FLOAT_EQ(v4.XY.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4.XY.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4.YZ.Elements[0], 2.0f);
-    EXPECT_FLOAT_EQ(v4.YZ.Elements[1], 3.0f);
-    EXPECT_FLOAT_EQ(v4.ZW.Elements[0], 3.0f);
-    EXPECT_FLOAT_EQ(v4.ZW.Elements[1], 4.0f);
-    EXPECT_FLOAT_EQ(v4.XY.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4.XY.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4.XYZ.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4.XYZ.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4.XYZ.Elements[2], 3.0f);
-    EXPECT_FLOAT_EQ(v4.RGB.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4.RGB.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4.RGB.Elements[2], 3.0f);
+    EXPECT_FLOAT_EQ(v4.XY.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4.XY.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4.YZ.Data[0], 2.0f);
+    EXPECT_FLOAT_EQ(v4.YZ.Data[1], 3.0f);
+    EXPECT_FLOAT_EQ(v4.ZW.Data[0], 3.0f);
+    EXPECT_FLOAT_EQ(v4.ZW.Data[1], 4.0f);
+    EXPECT_FLOAT_EQ(v4.XY.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4.XY.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4.XYZ.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4.XYZ.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4.XYZ.Data[2], 3.0f);
+    EXPECT_FLOAT_EQ(v4.RGB.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4.RGB.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4.RGB.Data[2], 3.0f);
 #ifdef __cplusplus
     EXPECT_FLOAT_EQ(v4[0], 1.0f);
     EXPECT_FLOAT_EQ(v4[1], 2.0f);
@@ -96,20 +96,20 @@ TEST(Initialization, Vectors)
     EXPECT_FLOAT_EQ(v4v.G, 2.0f);
     EXPECT_FLOAT_EQ(v4v.B, 3.0f);
     EXPECT_FLOAT_EQ(v4v.A, 4.0f);
-    EXPECT_FLOAT_EQ(v4v.XY.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4v.XY.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4v.YZ.Elements[0], 2.0f);
-    EXPECT_FLOAT_EQ(v4v.YZ.Elements[1], 3.0f);
-    EXPECT_FLOAT_EQ(v4v.ZW.Elements[0], 3.0f);
-    EXPECT_FLOAT_EQ(v4v.ZW.Elements[1], 4.0f);
-    EXPECT_FLOAT_EQ(v4v.XY.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4v.XY.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4v.XYZ.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4v.XYZ.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4v.XYZ.Elements[2], 3.0f);
-    EXPECT_FLOAT_EQ(v4v.RGB.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(v4v.RGB.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(v4v.RGB.Elements[2], 3.0f);
+    EXPECT_FLOAT_EQ(v4v.XY.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4v.XY.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4v.YZ.Data[0], 2.0f);
+    EXPECT_FLOAT_EQ(v4v.YZ.Data[1], 3.0f);
+    EXPECT_FLOAT_EQ(v4v.ZW.Data[0], 3.0f);
+    EXPECT_FLOAT_EQ(v4v.ZW.Data[1], 4.0f);
+    EXPECT_FLOAT_EQ(v4v.XY.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4v.XY.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4v.XYZ.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4v.XYZ.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4v.XYZ.Data[2], 3.0f);
+    EXPECT_FLOAT_EQ(v4v.RGB.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(v4v.RGB.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(v4v.RGB.Data[2], 3.0f);
 #ifdef __cplusplus
     EXPECT_FLOAT_EQ(v4v[0], 1.0f);
     EXPECT_FLOAT_EQ(v4v[1], 2.0f);
@@ -128,7 +128,7 @@ TEST(Initialization, MatrixEmpty)
     {
         for (int Row = 0; Row < 2; ++Row)
         {
-            EXPECT_FLOAT_EQ(m2.Elements[Column][Row], 0.0f);
+            EXPECT_FLOAT_EQ(m2.Data[Column][Row], 0.0f);
 #ifdef __cplusplus
             EXPECT_FLOAT_EQ(m2[Column][Row], 0.0f);
 #endif
@@ -143,7 +143,7 @@ TEST(Initialization, MatrixEmpty)
     {
         for (int Row = 0; Row < 3; ++Row)
         {
-            EXPECT_FLOAT_EQ(m3.Elements[Column][Row], 0.0f);
+            EXPECT_FLOAT_EQ(m3.Data[Column][Row], 0.0f);
 #ifdef __cplusplus
             EXPECT_FLOAT_EQ(m3[Column][Row], 0.0f);
 #endif
@@ -158,7 +158,7 @@ TEST(Initialization, MatrixEmpty)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            EXPECT_FLOAT_EQ(m4.Elements[Column][Row], 0.0f);
+            EXPECT_FLOAT_EQ(m4.Data[Column][Row], 0.0f);
 #ifdef __cplusplus
             EXPECT_FLOAT_EQ(m4[Column][Row], 0.0f);
 #endif
@@ -177,9 +177,9 @@ TEST(Initialization, MatrixDiagonal)
         for (int Row = 0; Row < 2; ++Row)
         {
             if (Column == Row) {
-                EXPECT_FLOAT_EQ(m2d.Elements[Column][Row], 1.0f);
+                EXPECT_FLOAT_EQ(m2d.Data[Column][Row], 1.0f);
             } else {
-                EXPECT_FLOAT_EQ(m2d.Elements[Column][Row], 0.0f);
+                EXPECT_FLOAT_EQ(m2d.Data[Column][Row], 0.0f);
             }
         }
     }
@@ -193,9 +193,9 @@ TEST(Initialization, MatrixDiagonal)
         for (int Row = 0; Row < 3; ++Row)
         {
             if (Column == Row) {
-                EXPECT_FLOAT_EQ(m3d.Elements[Column][Row], 1.0f);
+                EXPECT_FLOAT_EQ(m3d.Data[Column][Row], 1.0f);
             } else {
-                EXPECT_FLOAT_EQ(m3d.Elements[Column][Row], 0.0f);
+                EXPECT_FLOAT_EQ(m3d.Data[Column][Row], 0.0f);
             }
         }
     }
@@ -209,9 +209,9 @@ TEST(Initialization, MatrixDiagonal)
         for (int Row = 0; Row < 4; ++Row)
         {
             if (Column == Row) {
-                EXPECT_FLOAT_EQ(m4d.Elements[Column][Row], 1.0f);
+                EXPECT_FLOAT_EQ(m4d.Data[Column][Row], 1.0f);
             } else {
-                EXPECT_FLOAT_EQ(m4d.Elements[Column][Row], 0.0f);
+                EXPECT_FLOAT_EQ(m4d.Data[Column][Row], 0.0f);
             }
         }
     }
@@ -226,10 +226,10 @@ TEST(Initialization, Quaternion)
     EXPECT_FLOAT_EQ(q.Z, 3.0f);
     EXPECT_FLOAT_EQ(q.W, 4.0f);
 
-    EXPECT_FLOAT_EQ(q.Elements[0], 1.0f);
-    EXPECT_FLOAT_EQ(q.Elements[1], 2.0f);
-    EXPECT_FLOAT_EQ(q.Elements[2], 3.0f);
-    EXPECT_FLOAT_EQ(q.Elements[3], 4.0f);
+    EXPECT_FLOAT_EQ(q.Data[0], 1.0f);
+    EXPECT_FLOAT_EQ(q.Data[1], 2.0f);
+    EXPECT_FLOAT_EQ(q.Data[2], 3.0f);
+    EXPECT_FLOAT_EQ(q.Data[3], 4.0f);
 
     Vec4 v = V4(1.0f, 2.0f, 3.0f, 4.0f);
     Quat qv = QV4(v);
@@ -253,10 +253,10 @@ TEST(Initialization, MatrixOverloads)
     m2[0][1] = 2.0f;
     m2[1][0] = 3.0f;
     m2[1][1] = 4.0f;
-    EXPECT_FLOAT_EQ(m2.Elements[0][0], 1.0f);
-    EXPECT_FLOAT_EQ(m2.Elements[0][1], 2.0f);
-    EXPECT_FLOAT_EQ(m2.Elements[1][0], 3.0f);
-    EXPECT_FLOAT_EQ(m2.Elements[1][1], 4.0f);
+    EXPECT_FLOAT_EQ(m2.Data[0][0], 1.0f);
+    EXPECT_FLOAT_EQ(m2.Data[0][1], 2.0f);
+    EXPECT_FLOAT_EQ(m2.Data[1][0], 3.0f);
+    EXPECT_FLOAT_EQ(m2.Data[1][1], 4.0f);
 
     //
     // Test mat3
@@ -271,15 +271,15 @@ TEST(Initialization, MatrixOverloads)
     m3[2][0] = 7.0f;
     m3[2][1] = 8.0f;
     m3[2][2] = 9.0f;
-    EXPECT_FLOAT_EQ(m3.Elements[0][0], 1.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[0][1], 2.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[0][2], 3.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[1][0], 4.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[1][1], 5.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[1][2], 6.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[2][0], 7.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[2][1], 8.0f);
-    EXPECT_FLOAT_EQ(m3.Elements[2][2], 9.0f);
+    EXPECT_FLOAT_EQ(m3.Data[0][0], 1.0f);
+    EXPECT_FLOAT_EQ(m3.Data[0][1], 2.0f);
+    EXPECT_FLOAT_EQ(m3.Data[0][2], 3.0f);
+    EXPECT_FLOAT_EQ(m3.Data[1][0], 4.0f);
+    EXPECT_FLOAT_EQ(m3.Data[1][1], 5.0f);
+    EXPECT_FLOAT_EQ(m3.Data[1][2], 6.0f);
+    EXPECT_FLOAT_EQ(m3.Data[2][0], 7.0f);
+    EXPECT_FLOAT_EQ(m3.Data[2][1], 8.0f);
+    EXPECT_FLOAT_EQ(m3.Data[2][2], 9.0f);
 
     //
     // Test mat4
@@ -301,21 +301,21 @@ TEST(Initialization, MatrixOverloads)
     m4[3][1] = 14.0f;
     m4[3][2] = 15.0f;
     m4[3][3] = 16.0f;
-    EXPECT_FLOAT_EQ(m4.Elements[0][0], 1.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[0][1], 2.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[0][2], 3.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[0][3], 4.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][0], 5.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][1], 6.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][2], 7.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][3], 8.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][0], 9.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][1], 10.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][2], 11.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][3], 12.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][0], 13.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][1], 14.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][2], 15.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][3], 16.0f);
+    EXPECT_FLOAT_EQ(m4.Data[0][0], 1.0f);
+    EXPECT_FLOAT_EQ(m4.Data[0][1], 2.0f);
+    EXPECT_FLOAT_EQ(m4.Data[0][2], 3.0f);
+    EXPECT_FLOAT_EQ(m4.Data[0][3], 4.0f);
+    EXPECT_FLOAT_EQ(m4.Data[1][0], 5.0f);
+    EXPECT_FLOAT_EQ(m4.Data[1][1], 6.0f);
+    EXPECT_FLOAT_EQ(m4.Data[1][2], 7.0f);
+    EXPECT_FLOAT_EQ(m4.Data[1][3], 8.0f);
+    EXPECT_FLOAT_EQ(m4.Data[2][0], 9.0f);
+    EXPECT_FLOAT_EQ(m4.Data[2][1], 10.0f);
+    EXPECT_FLOAT_EQ(m4.Data[2][2], 11.0f);
+    EXPECT_FLOAT_EQ(m4.Data[2][3], 12.0f);
+    EXPECT_FLOAT_EQ(m4.Data[3][0], 13.0f);
+    EXPECT_FLOAT_EQ(m4.Data[3][1], 14.0f);
+    EXPECT_FLOAT_EQ(m4.Data[3][2], 15.0f);
+    EXPECT_FLOAT_EQ(m4.Data[3][3], 16.0f);
 }
 #endif

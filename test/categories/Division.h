@@ -200,33 +200,33 @@ TEST(Division, Mat2Scalar)
     int Counter = 1;
     for (int Column = 0; Column < 2; ++Column) {
         for (int Row = 0; Row < 2; ++Row) {
-            m.Elements[Column][Row] = Counter++;
+            m.Data[Column][Row] = Counter++;
         }
     }
 
     {
         Mat2 result = DivM2F(m, s);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 8.0f);
     }
 
 #ifdef __cplusplus
     {
         Mat2 result = Div(m, s);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 8.0f);
     }
 
     {
         Mat2 result = m / s;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 8.0f);
     }
 #endif
 }
@@ -240,48 +240,48 @@ TEST(Division, Mat3Scalar)
     int Counter = 1;
     for (int Column = 0; Column < 3; ++Column) {
         for (int Row = 0; Row < 3; ++Row) {
-            m.Elements[Column][Row] = Counter++;
+            m.Data[Column][Row] = Counter++;
         }
     }
 
     {
         Mat3 result = DivM3F(m, s);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 8.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 10.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 12.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 14.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 16.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 18.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][2], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 10.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 12.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][0], 14.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][1], 16.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 18.0f);
     }
 
 #ifdef __cplusplus
     {
         Mat3 result = Div(m, s);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 8.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 10.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 12.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 14.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 16.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 18.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][2], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 10.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 12.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][0], 14.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][1], 16.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 18.0f);
     }
 
     {
         Mat3 result = m / s;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 8.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 10.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 12.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 14.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 16.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 18.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][2], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 10.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 12.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][0], 14.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][1], 16.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 18.0f);
     }
 #endif
 }
@@ -297,7 +297,7 @@ TEST(Division, Mat4Scalar)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            m4.Elements[Column][Row] = Counter;
+            m4.Data[Column][Row] = Counter;
             ++Counter;
         }
     }
@@ -305,80 +305,80 @@ TEST(Division, Mat4Scalar)
     // Test the results
     {
         Mat4 result = DivM4F(m4, s);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 0.5f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 1.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 1.5f);
-        EXPECT_FLOAT_EQ(result.Elements[0][3], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 2.5f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 3.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 3.5f);
-        EXPECT_FLOAT_EQ(result.Elements[1][3], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 4.5f);
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 5.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 5.5f);
-        EXPECT_FLOAT_EQ(result.Elements[2][3], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[3][0], 6.5f);
-        EXPECT_FLOAT_EQ(result.Elements[3][1], 7.0f);
-        EXPECT_FLOAT_EQ(result.Elements[3][2], 7.5f);
-        EXPECT_FLOAT_EQ(result.Elements[3][3], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 0.5f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 1.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][2], 1.5f);
+        EXPECT_FLOAT_EQ(result.Data[0][3], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 2.5f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 3.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 3.5f);
+        EXPECT_FLOAT_EQ(result.Data[1][3], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][0], 4.5f);
+        EXPECT_FLOAT_EQ(result.Data[2][1], 5.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 5.5f);
+        EXPECT_FLOAT_EQ(result.Data[2][3], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[3][0], 6.5f);
+        EXPECT_FLOAT_EQ(result.Data[3][1], 7.0f);
+        EXPECT_FLOAT_EQ(result.Data[3][2], 7.5f);
+        EXPECT_FLOAT_EQ(result.Data[3][3], 8.0f);
     }
 #ifdef __cplusplus
     {
         Mat4 result = Div(m4, s);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 0.5f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 1.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 1.5f);
-        EXPECT_FLOAT_EQ(result.Elements[0][3], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 2.5f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 3.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 3.5f);
-        EXPECT_FLOAT_EQ(result.Elements[1][3], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 4.5f);
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 5.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 5.5f);
-        EXPECT_FLOAT_EQ(result.Elements[2][3], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[3][0], 6.5f);
-        EXPECT_FLOAT_EQ(result.Elements[3][1], 7.0f);
-        EXPECT_FLOAT_EQ(result.Elements[3][2], 7.5f);
-        EXPECT_FLOAT_EQ(result.Elements[3][3], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 0.5f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 1.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][2], 1.5f);
+        EXPECT_FLOAT_EQ(result.Data[0][3], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 2.5f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 3.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 3.5f);
+        EXPECT_FLOAT_EQ(result.Data[1][3], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][0], 4.5f);
+        EXPECT_FLOAT_EQ(result.Data[2][1], 5.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 5.5f);
+        EXPECT_FLOAT_EQ(result.Data[2][3], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[3][0], 6.5f);
+        EXPECT_FLOAT_EQ(result.Data[3][1], 7.0f);
+        EXPECT_FLOAT_EQ(result.Data[3][2], 7.5f);
+        EXPECT_FLOAT_EQ(result.Data[3][3], 8.0f);
     }
     {
         Mat4 result = m4 / s;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 0.5f);
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 1.0f);
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 1.5f);
-        EXPECT_FLOAT_EQ(result.Elements[0][3], 2.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 2.5f);
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 3.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 3.5f);
-        EXPECT_FLOAT_EQ(result.Elements[1][3], 4.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 4.5f);
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 5.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 5.5f);
-        EXPECT_FLOAT_EQ(result.Elements[2][3], 6.0f);
-        EXPECT_FLOAT_EQ(result.Elements[3][0], 6.5f);
-        EXPECT_FLOAT_EQ(result.Elements[3][1], 7.0f);
-        EXPECT_FLOAT_EQ(result.Elements[3][2], 7.5f);
-        EXPECT_FLOAT_EQ(result.Elements[3][3], 8.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][0], 0.5f);
+        EXPECT_FLOAT_EQ(result.Data[0][1], 1.0f);
+        EXPECT_FLOAT_EQ(result.Data[0][2], 1.5f);
+        EXPECT_FLOAT_EQ(result.Data[0][3], 2.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][0], 2.5f);
+        EXPECT_FLOAT_EQ(result.Data[1][1], 3.0f);
+        EXPECT_FLOAT_EQ(result.Data[1][2], 3.5f);
+        EXPECT_FLOAT_EQ(result.Data[1][3], 4.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][0], 4.5f);
+        EXPECT_FLOAT_EQ(result.Data[2][1], 5.0f);
+        EXPECT_FLOAT_EQ(result.Data[2][2], 5.5f);
+        EXPECT_FLOAT_EQ(result.Data[2][3], 6.0f);
+        EXPECT_FLOAT_EQ(result.Data[3][0], 6.5f);
+        EXPECT_FLOAT_EQ(result.Data[3][1], 7.0f);
+        EXPECT_FLOAT_EQ(result.Data[3][2], 7.5f);
+        EXPECT_FLOAT_EQ(result.Data[3][3], 8.0f);
     }
 
     m4 /= s;
-    EXPECT_FLOAT_EQ(m4.Elements[0][0], 0.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[0][1], 1.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[0][2], 1.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[0][3], 2.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][0], 2.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][1], 3.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][2], 3.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[1][3], 4.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][0], 4.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][1], 5.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][2], 5.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[2][3], 6.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][0], 6.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][1], 7.0f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][2], 7.5f);
-    EXPECT_FLOAT_EQ(m4.Elements[3][3], 8.0f);
+    EXPECT_FLOAT_EQ(m4.Data[0][0], 0.5f);
+    EXPECT_FLOAT_EQ(m4.Data[0][1], 1.0f);
+    EXPECT_FLOAT_EQ(m4.Data[0][2], 1.5f);
+    EXPECT_FLOAT_EQ(m4.Data[0][3], 2.0f);
+    EXPECT_FLOAT_EQ(m4.Data[1][0], 2.5f);
+    EXPECT_FLOAT_EQ(m4.Data[1][1], 3.0f);
+    EXPECT_FLOAT_EQ(m4.Data[1][2], 3.5f);
+    EXPECT_FLOAT_EQ(m4.Data[1][3], 4.0f);
+    EXPECT_FLOAT_EQ(m4.Data[2][0], 4.5f);
+    EXPECT_FLOAT_EQ(m4.Data[2][1], 5.0f);
+    EXPECT_FLOAT_EQ(m4.Data[2][2], 5.5f);
+    EXPECT_FLOAT_EQ(m4.Data[2][3], 6.0f);
+    EXPECT_FLOAT_EQ(m4.Data[3][0], 6.5f);
+    EXPECT_FLOAT_EQ(m4.Data[3][1], 7.0f);
+    EXPECT_FLOAT_EQ(m4.Data[3][2], 7.5f);
+    EXPECT_FLOAT_EQ(m4.Data[3][3], 8.0f);
 #endif
 }
 

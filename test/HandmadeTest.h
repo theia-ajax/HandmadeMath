@@ -208,40 +208,40 @@ INITIALIZER(_HMT_COVERCASE_FUNCNAME_INIT(name)) { \
     HMT_EXPECT_FLOAT_EQ_MSG(_actual.Z, _expected.Z, "incorrect Z"); \
     HMT_EXPECT_FLOAT_EQ_MSG(_actual.W, _expected.W, "incorrect W");
 #define EXPECT_M4_EQ(_actual, _expected) \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[0][0], _expected.Elements[0][0], "incorrect [0][0]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[0][1], _expected.Elements[0][1], "incorrect [0][1]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[0][2], _expected.Elements[0][2], "incorrect [0][2]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[0][3], _expected.Elements[0][3], "incorrect [0][3]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[1][0], _expected.Elements[1][0], "incorrect [1][0]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[1][1], _expected.Elements[1][1], "incorrect [1][1]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[1][2], _expected.Elements[1][2], "incorrect [1][2]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[1][3], _expected.Elements[1][3], "incorrect [1][3]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[2][0], _expected.Elements[2][0], "incorrect [2][0]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[2][1], _expected.Elements[2][1], "incorrect [2][1]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[2][2], _expected.Elements[2][2], "incorrect [2][2]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[2][3], _expected.Elements[2][3], "incorrect [2][3]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[3][0], _expected.Elements[3][0], "incorrect [3][0]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[3][1], _expected.Elements[3][1], "incorrect [3][1]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[3][2], _expected.Elements[3][2], "incorrect [3][2]"); \
-    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Elements[3][3], _expected.Elements[3][3], "incorrect [3][3]");
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[0][0], _expected.Data[0][0], "incorrect [0][0]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[0][1], _expected.Data[0][1], "incorrect [0][1]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[0][2], _expected.Data[0][2], "incorrect [0][2]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[0][3], _expected.Data[0][3], "incorrect [0][3]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[1][0], _expected.Data[1][0], "incorrect [1][0]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[1][1], _expected.Data[1][1], "incorrect [1][1]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[1][2], _expected.Data[1][2], "incorrect [1][2]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[1][3], _expected.Data[1][3], "incorrect [1][3]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[2][0], _expected.Data[2][0], "incorrect [2][0]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[2][1], _expected.Data[2][1], "incorrect [2][1]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[2][2], _expected.Data[2][2], "incorrect [2][2]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[2][3], _expected.Data[2][3], "incorrect [2][3]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[3][0], _expected.Data[3][0], "incorrect [3][0]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[3][1], _expected.Data[3][1], "incorrect [3][1]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[3][2], _expected.Data[3][2], "incorrect [3][2]"); \
+    HMT_EXPECT_FLOAT_EQ_MSG(_actual.Data[3][3], _expected.Data[3][3], "incorrect [3][3]");
 #define EXPECT_NEAR(_actual, _expected, _epsilon) HMT_EXPECT_NEAR(_actual, _expected, _epsilon)
 #define EXPECT_M4_NEAR(_actual, _expected, _epsilon) \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[0][0], _expected.Elements[0][0], _epsilon, "incorrect [0][0]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[0][1], _expected.Elements[0][1], _epsilon, "incorrect [0][1]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[0][2], _expected.Elements[0][2], _epsilon, "incorrect [0][2]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[0][3], _expected.Elements[0][3], _epsilon, "incorrect [0][3]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[1][0], _expected.Elements[1][0], _epsilon, "incorrect [1][0]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[1][1], _expected.Elements[1][1], _epsilon, "incorrect [1][1]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[1][2], _expected.Elements[1][2], _epsilon, "incorrect [1][2]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[1][3], _expected.Elements[1][3], _epsilon, "incorrect [1][3]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[2][0], _expected.Elements[2][0], _epsilon, "incorrect [2][0]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[2][1], _expected.Elements[2][1], _epsilon, "incorrect [2][1]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[2][2], _expected.Elements[2][2], _epsilon, "incorrect [2][2]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[2][3], _expected.Elements[2][3], _epsilon, "incorrect [2][3]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[3][0], _expected.Elements[3][0], _epsilon, "incorrect [3][0]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[3][1], _expected.Elements[3][1], _epsilon, "incorrect [3][1]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[3][2], _expected.Elements[3][2], _epsilon, "incorrect [3][2]"); \
-    HMT_EXPECT_NEAR_MSG(_actual.Elements[3][3], _expected.Elements[3][3], _epsilon, "incorrect [3][3]");
+    HMT_EXPECT_NEAR_MSG(_actual.Data[0][0], _expected.Data[0][0], _epsilon, "incorrect [0][0]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[0][1], _expected.Data[0][1], _epsilon, "incorrect [0][1]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[0][2], _expected.Data[0][2], _epsilon, "incorrect [0][2]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[0][3], _expected.Data[0][3], _epsilon, "incorrect [0][3]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[1][0], _expected.Data[1][0], _epsilon, "incorrect [1][0]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[1][1], _expected.Data[1][1], _epsilon, "incorrect [1][1]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[1][2], _expected.Data[1][2], _epsilon, "incorrect [1][2]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[1][3], _expected.Data[1][3], _epsilon, "incorrect [1][3]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[2][0], _expected.Data[2][0], _epsilon, "incorrect [2][0]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[2][1], _expected.Data[2][1], _epsilon, "incorrect [2][1]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[2][2], _expected.Data[2][2], _epsilon, "incorrect [2][2]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[2][3], _expected.Data[2][3], _epsilon, "incorrect [2][3]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[3][0], _expected.Data[3][0], _epsilon, "incorrect [3][0]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[3][1], _expected.Data[3][1], _epsilon, "incorrect [3][1]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[3][2], _expected.Data[3][2], _epsilon, "incorrect [3][2]"); \
+    HMT_EXPECT_NEAR_MSG(_actual.Data[3][3], _expected.Data[3][3], _epsilon, "incorrect [3][3]");
 #define EXPECT_LT(_actual, _expected) HMT_EXPECT_LT(_actual, _expected)
 #define EXPECT_GT(_actual, _expected) HMT_EXPECT_GT(_actual, _expected)
 #endif // HMT_SAFE_MACROS

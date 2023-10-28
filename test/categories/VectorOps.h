@@ -613,27 +613,27 @@ TEST(MatrixOps, TransposeM4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            m4.Elements[Column][Row] = Counter;
+            m4.Data[Column][Row] = Counter;
             ++Counter;
         }
     }
 
     // Test the matrix
     Mat4 result = TransposeM4(m4);
-    EXPECT_FLOAT_EQ(result.Elements[0][0], 1.0f);
-    EXPECT_FLOAT_EQ(result.Elements[0][1], 5.0f);
-    EXPECT_FLOAT_EQ(result.Elements[0][2], 9.0f);
-    EXPECT_FLOAT_EQ(result.Elements[0][3], 13.0f);
-    EXPECT_FLOAT_EQ(result.Elements[1][0], 2.0f);
-    EXPECT_FLOAT_EQ(result.Elements[1][1], 6.0f);
-    EXPECT_FLOAT_EQ(result.Elements[1][2], 10.0f);
-    EXPECT_FLOAT_EQ(result.Elements[1][3], 14.0f);
-    EXPECT_FLOAT_EQ(result.Elements[2][0], 3.0f);
-    EXPECT_FLOAT_EQ(result.Elements[2][1], 7.0f);
-    EXPECT_FLOAT_EQ(result.Elements[2][2], 11.0f);
-    EXPECT_FLOAT_EQ(result.Elements[2][3], 15.0f);
-    EXPECT_FLOAT_EQ(result.Elements[3][0], 4.0f);
-    EXPECT_FLOAT_EQ(result.Elements[3][1], 8.0f);
-    EXPECT_FLOAT_EQ(result.Elements[3][2], 12.0f);
-    EXPECT_FLOAT_EQ(result.Elements[3][3], 16.0f);
+    EXPECT_FLOAT_EQ(result.Data[0][0], 1.0f);
+    EXPECT_FLOAT_EQ(result.Data[0][1], 5.0f);
+    EXPECT_FLOAT_EQ(result.Data[0][2], 9.0f);
+    EXPECT_FLOAT_EQ(result.Data[0][3], 13.0f);
+    EXPECT_FLOAT_EQ(result.Data[1][0], 2.0f);
+    EXPECT_FLOAT_EQ(result.Data[1][1], 6.0f);
+    EXPECT_FLOAT_EQ(result.Data[1][2], 10.0f);
+    EXPECT_FLOAT_EQ(result.Data[1][3], 14.0f);
+    EXPECT_FLOAT_EQ(result.Data[2][0], 3.0f);
+    EXPECT_FLOAT_EQ(result.Data[2][1], 7.0f);
+    EXPECT_FLOAT_EQ(result.Data[2][2], 11.0f);
+    EXPECT_FLOAT_EQ(result.Data[2][3], 15.0f);
+    EXPECT_FLOAT_EQ(result.Data[3][0], 4.0f);
+    EXPECT_FLOAT_EQ(result.Data[3][1], 8.0f);
+    EXPECT_FLOAT_EQ(result.Data[3][2], 12.0f);
+    EXPECT_FLOAT_EQ(result.Data[3][3], 16.0f);
 }
