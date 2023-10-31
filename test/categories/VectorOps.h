@@ -599,6 +599,113 @@ TEST(VectorOps, ClampV4)
 #endif
 }
 
+TEST(VectorOps, Splat)
+{
+    Vec4 v1 = Splat(3.0f);
+    EXPECT_V4_EQ(v1, V4(3.0f, 3.0f, 3.0f, 3.0f));
+
+    Vec4 v2 = Splat(-4.0f);
+    EXPECT_V4_EQ(v2, V4(-4.0f, -4.0f, -4.0f, -4.0f));
+}
+
+TEST(VectorOps, VecSortV2)
+{
+    Vec2 v1 = V2(2.0f, -1.0f);
+    Vec2 v2 = VecSortV2(v1);
+    EXPECT_GT(v2.Y, v2.X);
+
+#ifdef __cplusplus
+    {
+        Vec2 v1 = V2(2.0f, -1.0f);
+        Vec2 v2 = VecSort(v1);
+        EXPECT_GT(v2.Y, v2.X);
+    }
+#endif
+
+}
+
+TEST(VectorOps, VecSortV3)
+{
+    Vec3 v1 = V3(2.0f, -1.0f, 0.0f);
+    Vec3 v2 = VecSortV3(v1);
+    EXPECT_GT(v2.Y, v2.X);
+    EXPECT_GT(v2.Z, v2.Y);
+#ifdef __cplusplus
+    {
+        Vec3 v1 = V3(2.0f, -1.0f, 0.0f);
+        Vec3 v2 = VecSort(v1);
+        EXPECT_GT(v2.Y, v2.X);
+        EXPECT_GT(v2.Z, v2.Y);
+    }
+#endif
+}
+
+TEST(VectorOps, VecSortV4)
+{
+    Vec4 v1 = V4(2.0f, -1.0f, 0.0f, 6.0f);
+    Vec4 v2 = VecSortV4(v1);
+    EXPECT_GT(v2.Y, v2.X);
+    EXPECT_GT(v2.Z, v2.Y);
+    EXPECT_GT(v2.W, v2.Z);
+#ifdef __cplusplus
+    {
+        Vec4 v1 = V4(2.0f, -1.0f, 0.0f, 6.0f);
+        Vec4 v2 = VecSort(v1);
+        EXPECT_GT(v2.Y, v2.X);
+        EXPECT_GT(v2.Z, v2.Y);
+        EXPECT_GT(v2.W, v2.Z);
+    }
+#endif
+}
+
+TEST(VectorOps, VecRSortV2)
+{
+    Vec2 v1 = V2(2.0f, -1.0f);
+    Vec2 v2 = VecRSortV2(v1);
+    EXPECT_LT(v2.Y, v2.X);
+#ifdef __cplusplus
+    {
+        Vec2 v1 = V2(2.0f, -1.0f);
+        Vec2 v2 = VecRSort(v1);
+        EXPECT_LT(v2.Y, v2.X);
+    }
+#endif
+}
+
+TEST(VectorOps, VecRSortV3)
+{
+    Vec3 v1 = V3(2.0f, -1.0f, 0.0f);
+    Vec3 v2 = VecRSortV3(v1);
+    EXPECT_LT(v2.Y, v2.X);
+    EXPECT_LT(v2.Z, v2.Y);
+#ifdef __cplusplus
+    {
+        Vec3 v1 = V3(2.0f, -1.0f, 0.0f);
+        Vec3 v2 = VecRSort(v1);
+        EXPECT_LT(v2.Y, v2.X);
+        EXPECT_LT(v2.Z, v2.Y);
+    }
+#endif
+}
+
+TEST(VectorOps, VecRSortV4)
+{
+    Vec4 v1 = V4(2.0f, -1.0f, 0.0f, 6.0f);
+    Vec4 v2 = VecRSortV4(v1);
+    EXPECT_LT(v2.Y, v2.X);
+    EXPECT_LT(v2.Z, v2.Y);
+    EXPECT_LT(v2.W, v2.Z);
+#ifdef __cplusplus
+    {
+        Vec4 v1 = V4(2.0f, -1.0f, 0.0f, 6.0f);
+        Vec4 v2 = VecRSort(v1);
+        EXPECT_LT(v2.Y, v2.X);
+        EXPECT_LT(v2.Z, v2.Y);
+        EXPECT_LT(v2.W, v2.Z);
+    }
+#endif
+}
+
 /*
  * MatrixOps tests
  */

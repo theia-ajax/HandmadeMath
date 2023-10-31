@@ -85,3 +85,12 @@ TEST(ScalarMath, IsFinite)
     EXPECT_FALSE(IsFinite(-INFINITY));
     EXPECT_FALSE(IsFinite(-NAN));
 }
+
+TEST(ScalarMath, Approx)
+{
+    EXPECT_TRUE(Approx(0.0f, 0.0f));
+    EXPECT_TRUE(Approx(0.0f, KEpsilonFloat32));
+    EXPECT_TRUE(Approx(0.0f, -KEpsilonFloat32));
+    EXPECT_FALSE(Approx(0.0f, KEpsilonFloat32 * 2));
+    EXPECT_FALSE(Approx(-1.0f, 1.0f));
+}
