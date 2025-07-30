@@ -94,3 +94,12 @@ TEST(ScalarMath, Approx)
     EXPECT_FALSE(Approx(0.0f, KEpsilonFloat32 * 2));
     EXPECT_FALSE(Approx(-1.0f, 1.0f));
 }
+
+TEST(ScalarMath, Sign)
+{
+    EXPECT_FLOAT_EQ(Sign(-FLT_MAX), -1.0f);
+    EXPECT_FLOAT_EQ(Sign(-0.2f), -1.0f);
+    EXPECT_FLOAT_EQ(Sign(0.0f), 0.0f);
+    EXPECT_FLOAT_EQ(Sign(0.2f), 1.0f);
+    EXPECT_FLOAT_EQ(Sign(FLT_MAX), 1.0f);
+}

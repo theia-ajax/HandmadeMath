@@ -1,7 +1,7 @@
 /*
   HandmadeMath.h v2.0.0
 
-  tedajax fork:
+  theia-ajax fork:
 
   My Edits:
     - Remove HMM_ prefix, adjust some variable names accordingly
@@ -213,8 +213,6 @@ extern "C"
 #define TurnToDeg ((Float)(KDeg180 / KTurnHalf))
 #define KEpsilonFloat64 0.000000001
 #define KEpsilonFloat32 0.00001f
-#define KMaxFloat32 FLT_MAX
-#define KMaxFloat64 DBL_MAX
 
 #if defined(HANDMADE_MATH_USE_RADIANS)
 #define AngleRad(a) (a)
@@ -238,6 +236,9 @@ extern "C"
 
 #if !defined(HANDMADE_MATH_PROVIDE_MATH_FUNCTIONS)
 #include <math.h>
+#include <float.h>
+#define KMaxFloat32 FLT_MAX
+#define KMaxFloat64 DBL_MAX
 #define SINF sinf
 #define COSF cosf
 #define TANF tanf
@@ -268,6 +269,8 @@ extern "C"
 #define MOD(a, m) (((a) % (m)) >= 0 ? ((a) % (m)) : (((a) % (m)) + (m)))
 #define SQUARE(x) ((x) * (x))
 #define SWAP(T, A, B) { T SWAP = A; A = B; B = SWAP; }
+#define COMPARE(a, b) ((a) < (b)) ? (-1) : (((a) > (b)) ? (1) : (0))
+#define COMPARE_REVERSE(a, b) ((a) < (b)) ? (1) : (((a) > (b)) ? (-1) : (0))
 
     typedef union Vec2
     {
@@ -605,6 +608,13 @@ extern "C"
     {
         ASSERT_COVERED(Abs);
         return (A >= 0) ? A : -A;
+    }
+
+    COVERAGE(Sign, 1)
+    static inline Float Sign(Float A)
+    {
+        ASSERT_COVERED(Sign);
+        return (A == 0.0f) ? 0.0f : ((A < 0) ? -1.0f : 1.0f);
     }
 
     COVERAGE(Lerp, 1)
@@ -1106,21 +1116,24 @@ extern "C"
     static inline Vec2 NormV2(Vec2 A)
     {
         ASSERT_COVERED(NormV2);
-        return MulV2F(A, InvSqrtF(DotV2(A, A)));
+        Float Product = DotV2(A, A);
+        return (Product != 0) ? MulV2F(A, InvSqrtF(Product)) : V2(0, 0);
     }
 
     COVERAGE(NormV3, 1)
     static inline Vec3 NormV3(Vec3 A)
     {
         ASSERT_COVERED(NormV3);
-        return MulV3F(A, InvSqrtF(DotV3(A, A)));
+        Float Product = DotV3(A, A);
+        return (Product != 0) ? MulV3F(A, InvSqrtF(Product)) : V3(0, 0, 0);
     }
 
     COVERAGE(NormV4, 1)
     static inline Vec4 NormV4(Vec4 A)
     {
         ASSERT_COVERED(NormV4);
-        return MulV4F(A, InvSqrtF(DotV4(A, A)));
+        Float Product = DotV4(A, A);
+        return (Product != 0) ? MulV4F(A, InvSqrtF(Product)) : V4(0, 0, 0, 0);
     }
 
     /*
@@ -4163,7 +4176,8 @@ static inline Vec4 operator-(Vec4 In)
 #define Dot(A, B) _Generic((A), \
     Vec2: DotV2,                \
     Vec3: DotV3,                \
-    Vec4: DotV4)(A, B)
+    Vec4: DotV4,                \
+    Quat: DotQ)(A, B)
 
 #define Min(A, B) _Generic((A), \
     Float: Min,                 \
